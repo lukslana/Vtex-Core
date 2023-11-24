@@ -9,8 +9,11 @@ using Vtex.Component.Entities.Catalog.Product.Request;
 using Vtex.Component.Entities.Catalog.Product.Response;
 using Vtex.Component.Entities.Catalog.ProductSpecification.Request;
 using Vtex.Component.Entities.Catalog.ProductSpecification.Response;
+using Vtex.Component.Entities.Catalog.SkuEan.Response;
 using Vtex.Component.Entities.Catalog.Specification.Request;
 using Vtex.Component.Entities.Catalog.Specification.Response;
+using Vtex.Component.Entities.Catalog.SpecificationField.Request;
+using Vtex.Component.Entities.Catalog.SpecificationField.Response;
 using Vtex.Component.Entities.Catalog.SpecificationGroup.Request;
 using Vtex.Component.Entities.Catalog.SpecificationGroup.Response;
 using Vtex.Component.Interfaces.Catalog.Brand;
@@ -19,7 +22,9 @@ using Vtex.Component.Interfaces.Catalog.CategorySpecification;
 using Vtex.Component.Interfaces.Catalog.Product;
 using Vtex.Component.Interfaces.Catalog.ProductSpecification;
 using Vtex.Component.Interfaces.Catalog.Specification;
+using Vtex.Component.Interfaces.Catalog.SpecificationField;
 using Vtex.Component.Interfaces.Catalog.SpecificationGroup;
+using static Vtex.Component.VtexCatalog.SpecificationField;
 
 
 namespace Vtex.Component
@@ -919,6 +924,67 @@ namespace Vtex.Component
                 /// </summary>
                 /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
                 public CreateSpecificationApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+        }
+
+        public static partial class SpecificationField
+        {
+            public static GetSpecificationFieldApi GetSpecificationField => new();
+            public static CreateSpecificationFieldApi CreateSpecificationField => new();
+            public static UpdateSpecificationFieldApi UpdateSpecificationField => new();
+            public sealed class GetSpecificationFieldApi : HttpEngine<GetSpecificationFieldRequest, GetSpecificationFieldResponse>, IGetSpecificationField
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public GetSpecificationFieldApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
+                public GetSpecificationFieldApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+            public sealed class CreateSpecificationFieldApi : HttpEngine<CreateSpecificationFieldRequest, CreateSpecificationFieldResponse>, ICreateSpecificationField
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public CreateSpecificationFieldApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
+                public CreateSpecificationFieldApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+            public sealed class UpdateSpecificationFieldApi : HttpEngine<UpdateSpecificationFieldRequest, UpdateSpecificationFieldResponse>, IUpdateSpecificationField
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public UpdateSpecificationFieldApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
+                public UpdateSpecificationFieldApi(HttpClient httpClient)
                     : base(httpClient)
                 {
                 }
