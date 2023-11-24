@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "vcnyE6JsM9TKerD3bL07VNkkmqCwHi1NcRd7qVlixAw=",
+  "Source": "Vtex.Component.Api",
+  "BasePath": "_content/Vtex.Component.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

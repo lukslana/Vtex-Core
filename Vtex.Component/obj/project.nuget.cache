@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "mPQO13Pr6RCD/AA28h1KvF6v/xy9KW5Zjb7ALD2hFy0eNm7hDrdnmWBroZNUxtwoBfndAVdSpAlc7UsIUybh3Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\luksl\\OneDrive\\Documentos\\GitHub\\Vtex-Core\\Vtex.Component\\Vtex.Component.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\luksl\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

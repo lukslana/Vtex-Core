@@ -1,0 +1,12 @@
+D:\Source\Pessoal\vtex\Vtex\Vtex.Component\bin\Debug\net8.0\Vtex.Component.deps.json
+D:\Source\Pessoal\vtex\Vtex\Vtex.Component\bin\Debug\net8.0\Vtex.Component.dll
+D:\Source\Pessoal\vtex\Vtex\Vtex.Component\bin\Debug\net8.0\Vtex.Component.pdb
+D:\Source\Pessoal\vtex\Vtex\Vtex.Component\obj\Debug\net8.0\Vtex.Component.csproj.AssemblyReference.cache
+D:\Source\Pessoal\vtex\Vtex\Vtex.Component\obj\Debug\net8.0\Vtex.Component.GeneratedMSBuildEditorConfig.editorconfig
+D:\Source\Pessoal\vtex\Vtex\Vtex.Component\obj\Debug\net8.0\Vtex.Component.AssemblyInfoInputs.cache
+D:\Source\Pessoal\vtex\Vtex\Vtex.Component\obj\Debug\net8.0\Vtex.Component.AssemblyInfo.cs
+D:\Source\Pessoal\vtex\Vtex\Vtex.Component\obj\Debug\net8.0\Vtex.Component.csproj.CoreCompileInputs.cache
+D:\Source\Pessoal\vtex\Vtex\Vtex.Component\obj\Debug\net8.0\Vtex.Component.dll
+D:\Source\Pessoal\vtex\Vtex\Vtex.Component\obj\Debug\net8.0\refint\Vtex.Component.dll
+D:\Source\Pessoal\vtex\Vtex\Vtex.Component\obj\Debug\net8.0\Vtex.Component.pdb
+D:\Source\Pessoal\vtex\Vtex\Vtex.Component\obj\Debug\net8.0\ref\Vtex.Component.dll

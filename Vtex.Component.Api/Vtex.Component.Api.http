@@ -1,0 +1,6 @@
+@Vtex.Component.Api_HostAddress = http://localhost:5209
+
+GET {{Vtex.Component.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
