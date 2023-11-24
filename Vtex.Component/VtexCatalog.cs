@@ -11,11 +11,15 @@ using Vtex.Component.Entities.Catalog.ProductSpecification.Request;
 using Vtex.Component.Entities.Catalog.ProductSpecification.Response;
 using Vtex.Component.Entities.Catalog.Specification.Request;
 using Vtex.Component.Entities.Catalog.Specification.Response;
+using Vtex.Component.Entities.Catalog.SpecificationGroup.Request;
+using Vtex.Component.Entities.Catalog.SpecificationGroup.Response;
 using Vtex.Component.Interfaces.Catalog.Brand;
 using Vtex.Component.Interfaces.Catalog.Category;
 using Vtex.Component.Interfaces.Catalog.CategorySpecification;
 using Vtex.Component.Interfaces.Catalog.Product;
 using Vtex.Component.Interfaces.Catalog.ProductSpecification;
+using Vtex.Component.Interfaces.Catalog.Specification;
+using Vtex.Component.Interfaces.Catalog.SpecificationGroup;
 
 
 namespace Vtex.Component

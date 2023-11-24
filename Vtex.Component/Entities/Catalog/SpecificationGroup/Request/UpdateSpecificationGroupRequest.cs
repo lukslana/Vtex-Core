@@ -7,11 +7,9 @@ using Vtex.Component.Entities.Common.Extensions;
 
 namespace Vtex.Component.Entities.Catalog.SpecificationGroup.Request
 {
-    public class UpdateSpecificationGroupRequest: BaseRequest
+    public class UpdateSpecificationGroupRequest: BaseCatalogRequest
     {
-
         protected internal override string BaseUrl => "api/catalog/pvt/specificationgroup/{groupId}";
-
         public override HttpMethod HttpMethod => HttpMethod.Put;
         public int groupId { get; set; }
         public override IList<KeyValuePair<string, string>> GetQueryStringParameters()

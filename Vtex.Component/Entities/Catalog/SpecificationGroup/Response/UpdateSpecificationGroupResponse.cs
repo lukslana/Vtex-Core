@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vtex.Component.Entities.Catalog.SpecificationGroup.Response
 {
-    internal class UpdateSpecificationGroupResponse
+    public class UpdateSpecificationGroupResponse: BaseCatalogResponse
     {
         public int CategoryId { get; set; }
         public int Id { get; set; }

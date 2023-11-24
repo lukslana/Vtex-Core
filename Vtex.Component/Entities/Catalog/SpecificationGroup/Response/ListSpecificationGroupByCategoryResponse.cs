@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Vtex.Component.Entities.Catalog.SpecificationGroup.Response
 {
-    internal class ListSpecificationGroupByCategoryResponse
+    public class ListSpecificationGroupByCategoryResponse: BaseCatalogResponse
     {
+        public int CategoryId { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Position { get; set; }
     }
 }
