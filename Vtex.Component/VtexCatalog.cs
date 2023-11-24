@@ -15,10 +15,7 @@ using Vtex.Component.Interfaces.Catalog.Brand;
 using Vtex.Component.Interfaces.Catalog.Category;
 using Vtex.Component.Interfaces.Catalog.CategorySpecification;
 using Vtex.Component.Interfaces.Catalog.Product;
-using static Vtex.Component.VtexCatalog.Category;
-using static Vtex.Component.VtexCatalog.CategorySpecification;
-using static Vtex.Component.VtexCatalog.Specification;
-using static Vtex.Component.VtexCatalog.SpecificationGroup;
+using Vtex.Component.Interfaces.Catalog.ProductSpecification;
 
 
 namespace Vtex.Component

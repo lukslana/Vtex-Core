@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vtex.Component.Interfaces.Catalog.ProductSpecification
 {
-    internal class IGetProductSpecificationByProductId
+    public interface IGetProductSpecificationByProductId
     {
     }
 }
