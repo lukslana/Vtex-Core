@@ -251,6 +251,11 @@ namespace Vtex.Component
             }
         }
 
+        public static partial class BrandSubCollection
+        {
+
+        }
+
         /// <summary>
         /// Categories organize your product assortment within your ecommerce. <br></br>
         /// They work as hierarchical levels of product classification, making your client’s search for a product easier and keeping your store organized.
