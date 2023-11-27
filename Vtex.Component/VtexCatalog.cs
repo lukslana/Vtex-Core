@@ -1,6 +1,8 @@
 ﻿using System.Runtime.InteropServices;
 using Vtex.Component.Entities.Catalog.Brand.Request;
 using Vtex.Component.Entities.Catalog.Brand.Response;
+using Vtex.Component.Entities.Catalog.BrandSubcollection.Request;
+using Vtex.Component.Entities.Catalog.BrandSubcollection.Response;
 using Vtex.Component.Entities.Catalog.Category.Request;
 using Vtex.Component.Entities.Catalog.Category.Response;
 using Vtex.Component.Entities.Catalog.CategorySpecification.Request;
@@ -17,6 +19,7 @@ using Vtex.Component.Entities.Catalog.SpecificationField.Response;
 using Vtex.Component.Entities.Catalog.SpecificationGroup.Request;
 using Vtex.Component.Entities.Catalog.SpecificationGroup.Response;
 using Vtex.Component.Interfaces.Catalog.Brand;
+using Vtex.Component.Interfaces.Catalog.BrandSubcollection;
 using Vtex.Component.Interfaces.Catalog.Category;
 using Vtex.Component.Interfaces.Catalog.CategorySpecification;
 using Vtex.Component.Interfaces.Catalog.Product;
@@ -24,6 +27,8 @@ using Vtex.Component.Interfaces.Catalog.ProductSpecification;
 using Vtex.Component.Interfaces.Catalog.Specification;
 using Vtex.Component.Interfaces.Catalog.SpecificationField;
 using Vtex.Component.Interfaces.Catalog.SpecificationGroup;
+using static Vtex.Component.VtexCatalog.BrandSubCollection;
+using static Vtex.Component.VtexCatalog.Category;
 using static Vtex.Component.VtexCatalog.SpecificationField;
 
 
@@ -253,9 +258,28 @@ namespace Vtex.Component
 
         public static partial class BrandSubCollection
         {
+            public static AssociateBrandtoSubcollectionApi AssociateBrandtoSubcollection => new();
 
+            public sealed class AssociateBrandtoSubcollectionApi : HttpEngine<AssociateBrandtoSubcollectionRequest, AssociateBrandtoSubcollectionResponse>, IAssociateBrandtoSubcollection
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public AssociateBrandtoSubcollectionApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name="httpClient">The <see cref="HttpClient"/>.</param>
+                public AssociateBrandtoSubcollectionApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+
+                }
+            }
         }
-
         /// <summary>
         /// Categories organize your product assortment within your ecommerce. <br></br>
         /// They work as hierarchical levels of product classification, making your client’s search for a product easier and keeping your store organized.
