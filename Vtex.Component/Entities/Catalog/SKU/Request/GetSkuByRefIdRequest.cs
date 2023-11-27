@@ -8,14 +8,14 @@ using Vtex.Component.Entities.Interfaces;
 
 namespace Vtex.Component.Entities.Catalog.SKU.Request
 {
-    public class GetSkuAndContextRequest: BaseSKURequest, IRequestQueryString
+    public class GetSkuByRefIdRequest : BaseSKURequest
     {
-        internal protected override string BaseUrl => "api/catalog_system/pvt/sku/stockkeepingunitbyid/{skuId}";
-        public int SkuId { get; set; }
+        internal protected override string BaseUrl => "/api/catalog/pvt/stockkeepingunit";
+        public int RefId { get; set; }
         public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
             var parameters = base.GetQueryStringParameters();
-            parameters.Add("skuId", this.SkuId.ToString());
+            parameters.Add("refId", this.RefId.ToString());
             return parameters;
         }
     }

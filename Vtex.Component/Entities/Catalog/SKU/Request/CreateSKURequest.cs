@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Vtex.Component.Entities.Catalog.SKU.Request
 {
-    public class CreateSKURequest : BaseSKURequest, IRequestJsonPost
+    public class CreateSKURequest : BaseSKURequest
     {
-        public override string BaseUrl => "api/catalog/pvt/stockkeepingunit";
+        protected internal override string BaseUrl => "api/catalog/pvt/stockkeepingunit";
         public int? Id { get; set; }
         public int? ProductId { get; set; }
         public bool? IsActive { get; set; }

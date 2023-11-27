@@ -54,7 +54,7 @@ namespace Vtex.Component
         ///catalog integration, after creating categories.For more information on Catalog structure and integration flow at VTEX,   <br></br>
         ///check our Catalog overview.
         ///</summary>
-        public static partial class Brands
+        public static partial class Brand
         {
             /// <summary>
             /// Retrieves all Brands registered in the store's Catalog.
@@ -809,6 +809,130 @@ namespace Vtex.Component
         }
 
         /// <summary>
+        /// Specifications are additional properties that can be added to your store's products or SKUs. A specification is used to create site browsing filters and to differentiate SKUs and products within the product page.
+        /// </summary>
+        public static partial class Specification
+        {
+            public static GetSpecificationApi GetSpecification => new();
+            public static UpdateSpecificationApi UpdateSpecification => new();
+            public static CreateSpecificationApi CreateSpecification => new();
+
+            public sealed class GetSpecificationApi : HttpEngine<GetSpecificationRequest, GetSpecificationResponse>, IGetSpecification
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public GetSpecificationApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
+                public GetSpecificationApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+            public sealed class UpdateSpecificationApi : HttpEngine<UpdateSpecificationRequest, UpdateSpecificationResponse>, IUpdateSpecification
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public UpdateSpecificationApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
+                public UpdateSpecificationApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+            public sealed class CreateSpecificationApi : HttpEngine<CreateSpecificationRequest, CreateSpecificationResponse>, ICreateSpecification
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public CreateSpecificationApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
+                public CreateSpecificationApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+        }
+        public static partial class SpecificationField
+        {
+            public static GetSpecificationFieldApi GetSpecificationField => new();
+            public static CreateSpecificationFieldApi CreateSpecificationField => new();
+            public static UpdateSpecificationFieldApi UpdateSpecificationField => new();
+            public sealed class GetSpecificationFieldApi : HttpEngine<GetSpecificationFieldRequest, GetSpecificationFieldResponse>, IGetSpecificationField
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public GetSpecificationFieldApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
+                public GetSpecificationFieldApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+            public sealed class CreateSpecificationFieldApi : HttpEngine<CreateSpecificationFieldRequest, CreateSpecificationFieldResponse>, ICreateSpecificationField
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public CreateSpecificationFieldApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
+                public CreateSpecificationFieldApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+            public sealed class UpdateSpecificationFieldApi : HttpEngine<UpdateSpecificationFieldRequest, UpdateSpecificationFieldResponse>, IUpdateSpecificationField
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public UpdateSpecificationFieldApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
+                public UpdateSpecificationFieldApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+        }
+        /// <summary>
         /// To create specifications, the first step is to create specification groups. They are specification aggregators, for example, we can create a group named Technical Specifications, and in it we can insert specifications referring to the product's technical data, such as material, voltage, dimensions, etc.
         /// </summary>
         public static partial class SpecificationGroup
@@ -892,132 +1016,6 @@ namespace Vtex.Component
                 }
             }
 
-        }
-
-        /// <summary>
-        /// Specifications are additional properties that can be added to your store's products or SKUs. A specification is used to create site browsing filters and to differentiate SKUs and products within the product page.
-        /// </summary>
-        public static partial class Specification
-        {
-            public static GetSpecificationApi GetSpecification => new();
-            public static UpdateSpecificationApi UpdateSpecification => new();
-            public static CreateSpecificationApi CreateSpecification => new();
-
-            public sealed class GetSpecificationApi : HttpEngine<GetSpecificationRequest, GetSpecificationResponse>, IGetSpecification
-            {
-                /// <summary>
-                /// Constructor.
-                /// </summary>
-                public GetSpecificationApi()
-                {
-                }
-
-                /// <summary>
-                /// Constructor.
-                /// </summary>
-                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
-                public GetSpecificationApi(HttpClient httpClient)
-                    : base(httpClient)
-                {
-                }
-            }
-            public sealed class UpdateSpecificationApi : HttpEngine<UpdateSpecificationRequest, UpdateSpecificationResponse>, IUpdateSpecification
-            {
-                /// <summary>
-                /// Constructor.
-                /// </summary>
-                public UpdateSpecificationApi()
-                {
-                }
-
-                /// <summary>
-                /// Constructor.
-                /// </summary>
-                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
-                public UpdateSpecificationApi(HttpClient httpClient)
-                    : base(httpClient)
-                {
-                }
-            }
-            public sealed class CreateSpecificationApi : HttpEngine<CreateSpecificationRequest, CreateSpecificationResponse>, ICreateSpecification
-            {
-                /// <summary>
-                /// Constructor.
-                /// </summary>
-                public CreateSpecificationApi()
-                {
-                }
-
-                /// <summary>
-                /// Constructor.
-                /// </summary>
-                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
-                public CreateSpecificationApi(HttpClient httpClient)
-                    : base(httpClient)
-                {
-                }
-            }
-        }
-
-        public static partial class SpecificationField
-        {
-            public static GetSpecificationFieldApi GetSpecificationField => new();
-            public static CreateSpecificationFieldApi CreateSpecificationField => new();
-            public static UpdateSpecificationFieldApi UpdateSpecificationField => new();
-            public sealed class GetSpecificationFieldApi : HttpEngine<GetSpecificationFieldRequest, GetSpecificationFieldResponse>, IGetSpecificationField
-            {
-                /// <summary>
-                /// Constructor.
-                /// </summary>
-                public GetSpecificationFieldApi()
-                {
-                }
-
-                /// <summary>
-                /// Constructor.
-                /// </summary>
-                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
-                public GetSpecificationFieldApi(HttpClient httpClient)
-                    : base(httpClient)
-                {
-                }
-            }
-            public sealed class CreateSpecificationFieldApi : HttpEngine<CreateSpecificationFieldRequest, CreateSpecificationFieldResponse>, ICreateSpecificationField
-            {
-                /// <summary>
-                /// Constructor.
-                /// </summary>
-                public CreateSpecificationFieldApi()
-                {
-                }
-
-                /// <summary>
-                /// Constructor.
-                /// </summary>
-                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
-                public CreateSpecificationFieldApi(HttpClient httpClient)
-                    : base(httpClient)
-                {
-                }
-            }
-            public sealed class UpdateSpecificationFieldApi : HttpEngine<UpdateSpecificationFieldRequest, UpdateSpecificationFieldResponse>, IUpdateSpecificationField
-            {
-                /// <summary>
-                /// Constructor.
-                /// </summary>
-                public UpdateSpecificationFieldApi()
-                {
-                }
-
-                /// <summary>
-                /// Constructor.
-                /// </summary>
-                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
-                public UpdateSpecificationFieldApi(HttpClient httpClient)
-                    : base(httpClient)
-                {
-                }
-            }
         }
 
     }

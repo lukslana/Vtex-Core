@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vtex.Component.Entities.Catalog.SKU.Response
 {
-    public class GetSKUAndContextResponse : BaseResponse
+    public class GetSKuAndContextResponse : BaseResponse
     {
         public int Id { get; set; }
         public int ProductId { get; set; }
@@ -63,7 +63,6 @@ namespace Vtex.Component.Entities.Catalog.SKU.Response
         public bool IsProductActive { get; set; }
         public int ProductFinalScore { get; set; }
  
-
         public class Dimensions
         {
             public float cubicweight { get; set; }

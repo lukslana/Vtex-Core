@@ -8,6 +8,6 @@ namespace Vtex.Component.Entities.Catalog.SKU.Response
 {
     public class ListAllSKUIDsResponse : BaseResponse
     {
-        public long[] data { get; set; }
+        public long[] Data { get; set; }
     }
 }
