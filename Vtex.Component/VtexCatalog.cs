@@ -255,7 +255,9 @@ namespace Vtex.Component
                 }
             }
         }
-
+        /// <summary>
+        /// Associates a single Brand to a Subcollection, which is a Group within a Collection.
+        /// </summary>
         public static partial class BrandSubCollection
         {
             public static AssociateBrandtoSubcollectionApi AssociateBrandtoSubcollection => new();
@@ -386,7 +388,6 @@ namespace Vtex.Component
                 }
             }
         }
-
         /// <summary>
         /// Categories organize your product assortment within your ecommerce. They work as hierarchical levels of product classification, making your client’s search for a product easier and keeping your store organized.
         /// </summary>
@@ -440,7 +441,6 @@ namespace Vtex.Component
                 }
             }
         }
-
         /// <summary>
         ///A product is a generic definition of an item that is part of your store’s <b>Catalog</b>, for instance, a shirt.<br></br>
         ///Products may vary by model, color, size, among other characteristics.Therefore, it would be possible to have the same product(shirt) in different models, like short or long sleeves, gray or pink color, sizes S, M or L.<br></br>
@@ -643,7 +643,6 @@ namespace Vtex.Component
                 }
             }
         }
-
         /// <summary>
         /// To create a product specification, use the API below. Remembering that you must have saved the ID of the field for which you want to create a specification.
         /// </summary>
@@ -807,7 +806,6 @@ namespace Vtex.Component
                 }
             }
         }
-
         /// <summary>
         /// Specifications are additional properties that can be added to your store's products or SKUs. A specification is used to create site browsing filters and to differentiate SKUs and products within the product page.
         /// </summary>
@@ -872,6 +870,9 @@ namespace Vtex.Component
                 }
             }
         }
+        /// <summary>
+        /// The groups and fields created will be valid for its registration category and for all child categories. For example, if a field is created in the root category, it will be available in all store categories.
+        /// </summary>
         public static partial class SpecificationField
         {
             public static GetSpecificationFieldApi GetSpecificationField => new();
@@ -1017,6 +1018,5 @@ namespace Vtex.Component
             }
 
         }
-
     }
 }

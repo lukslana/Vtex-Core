@@ -2,7 +2,7 @@
 
 namespace Vtex.Component.Entities.Catalog.SKU.Response
 {
-    public class GetSKUResponse: BaseResponse
+    public class GetSkuResponse: BaseResponse
     {
         public int Id { get; set; }
         public int ProductId { get; set; }

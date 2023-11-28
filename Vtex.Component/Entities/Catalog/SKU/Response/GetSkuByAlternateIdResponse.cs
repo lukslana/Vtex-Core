@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vtex.Component.Entities.Catalog.SKU.Response
 {
-    public class GetSKuAndContextResponse : BaseCatalogResponse
+    public class GetSkuByAlternateIdResponse: BaseCatalogResponse
     {
         public int Id { get; set; }
         public int ProductId { get; set; }
@@ -27,7 +27,6 @@ namespace Vtex.Component.Entities.Catalog.SKU.Response
         public string BrandId { get; set; }
         public string BrandName { get; set; }
         public bool IsBrandActive { get; set; }
-        public Dimensions Dimension { get; set; }
         public Realdimension RealDimension { get; set; }
         public string ManufacturerCode { get; set; }
         public bool IsKit { get; set; }
@@ -42,19 +41,23 @@ namespace Vtex.Component.Entities.Catalog.SKU.Response
         public Image[] Images { get; set; }
         public object[] Videos { get; set; }
         public object[] SkuSpecifications { get; set; }
-        public Productspecification[] ProductSpecifications { get; set; }
+        public object[] ProductSpecifications { get; set; }
         public string ProductClustersIds { get; set; }
+        public Positionsinclusters PositionsInClusters { get; set; }
+        public Productclusternames ProductClusterNames { get; set; }
+        public Productclusterhighlights ProductClusterHighlights { get; set; }
         public string ProductCategoryIds { get; set; }
         public bool IsDirectCategoryActive { get; set; }
-        public object ProductGlobalCategoryId { get; set; }
+        public int ProductGlobalCategoryId { get; set; }
+        public Productcategories ProductCategories { get; set; }
         public int CommercialConditionId { get; set; }
         public float RewardValue { get; set; }
         public Alternateids AlternateIds { get; set; }
         public string[] AlternateIdValues { get; set; }
-        public DateTime EstimatedDateArrival { get; set; }
+        public object EstimatedDateArrival { get; set; }
         public string MeasurementUnit { get; set; }
         public float UnitMultiplier { get; set; }
-        public string InformationSource { get; set; }
+        public object InformationSource { get; set; }
         public object ModalType { get; set; }
         public string KeyWords { get; set; }
         public DateTime ReleaseDate { get; set; }
@@ -62,15 +65,7 @@ namespace Vtex.Component.Entities.Catalog.SKU.Response
         public bool ShowIfNotAvailable { get; set; }
         public bool IsProductActive { get; set; }
         public int ProductFinalScore { get; set; }
- 
-        public class Dimensions
-        {
-            public float cubicweight { get; set; }
-            public float height { get; set; }
-            public float length { get; set; }
-            public float weight { get; set; }
-            public float width { get; set; }
-        }
+        
 
         public class Realdimension
         {
@@ -81,11 +76,32 @@ namespace Vtex.Component.Entities.Catalog.SKU.Response
             public float realWidth { get; set; }
         }
 
+        public class Positionsinclusters
+        {
+            public int _151 { get; set; }
+            public int _158 { get; set; }
+        }
 
+        public class Productclusternames
+        {
+            public string _151 { get; set; }
+            public string _158 { get; set; }
+        }
+
+        public class Productclusterhighlights
+        {
+            public string _151 { get; set; }
+        }
+
+        public class Productcategories
+        {
+            public string _15 { get; set; }
+            public string _3 { get; set; }
+            public string _1 { get; set; }
+        }
 
         public class Alternateids
         {
-            public string Ean { get; set; }
             public string RefId { get; set; }
         }
 
@@ -102,19 +118,8 @@ namespace Vtex.Component.Entities.Catalog.SKU.Response
         public class Image
         {
             public string ImageUrl { get; set; }
-            public string ImageName { get; set; }
+            public object ImageName { get; set; }
             public int FileId { get; set; }
-        }
-
-        public class Productspecification
-        {
-            public int FieldId { get; set; }
-            public string FieldName { get; set; }
-            public int[] FieldValueIds { get; set; }
-            public string[] FieldValues { get; set; }
-            public bool IsFilter { get; set; }
-            public int FieldGroupId { get; set; }
-            public string FieldGroupName { get; set; }
         }
     }
 }

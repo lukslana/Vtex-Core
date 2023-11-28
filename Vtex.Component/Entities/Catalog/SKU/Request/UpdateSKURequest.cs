@@ -9,9 +9,10 @@ using System.Threading.Tasks;
 
 namespace Vtex.Component.Entities.Catalog.SKU.Request
 {
-    public class UpdateSKURequest : BaseSKURequest, IRequestJsonPut
+    public class UpdateSKURequest : BaseSkuRequest
     {
-        public override string BaseUrl => "api/catalog/pvt/stockkeepingunit/{Id}";
+        internal protected override string BaseUrl => "api/catalog/pvt/stockkeepingunit/{Id}";
+        public override HttpMethod HttpMethod => HttpMethod.Post;
         public int? Id { get; set; }
         public int? ProductId { get; set; }
         public bool? IsActive { get; set; }

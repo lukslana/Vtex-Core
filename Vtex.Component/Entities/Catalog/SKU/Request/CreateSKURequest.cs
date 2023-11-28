@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Vtex.Component.Entities.Catalog.SKU.Request
 {
-    public class CreateSKURequest : BaseSKURequest
+    public class CreateSkuRequest : BaseSkuRequest
     {
         protected internal override string BaseUrl => "api/catalog/pvt/stockkeepingunit";
+        public override HttpMethod HttpMethod => HttpMethod.Get;
         public int? Id { get; set; }
         public int? ProductId { get; set; }
         public bool? IsActive { get; set; }

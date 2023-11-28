@@ -11,7 +11,7 @@ namespace Vtex.Component.Entities.Catalog.SKU.Request
     /// <summary>
     /// Retrieves the IDs of all SKUs in the store. Presents the result with page size and pagination.
     /// </summary>
-    public class ListAllSkuIdsRequest: BaseSKURequest, IRequestQueryString
+    public class ListAllSkuIdsRequest: BaseSkuRequest
     {
         protected internal override string BaseUrl => "api/catalog_system/pvt/sku/stockkeepingunitids";
         public override HttpMethod HttpMethod => HttpMethod.Get;

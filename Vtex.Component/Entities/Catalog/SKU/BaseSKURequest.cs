@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vtex.Component.Entities.Catalog.SKU
 {
-    public class BaseSKURequest : BaseCatalogRequest
+    public class BaseSkuRequest : BaseCatalogRequest
     {
         public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {

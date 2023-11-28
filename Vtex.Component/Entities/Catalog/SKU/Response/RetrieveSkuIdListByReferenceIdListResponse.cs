@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Vtex.Component.Entities.Catalog.SKU.Response
 {
-    public class ListAllSkuIdsResponse : BaseCatalogResponse
+    public class RetrieveSkuIdListByReferenceIdListResponse: BaseCatalogResponse
     {
-        public long[] Data { get; set; }
+        public Dictionary<string, string> RetrieveSkuIdListByReferenceIdListResponses { get; set; }
     }
 }

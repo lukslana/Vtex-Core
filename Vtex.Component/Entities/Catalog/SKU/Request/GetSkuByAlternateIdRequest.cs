@@ -4,19 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Vtex.Component.Entities.Common.Extensions;
-using Vtex.Component.Entities.Interfaces;
 
 namespace Vtex.Component.Entities.Catalog.SKU.Request
 {
-    public class GetSkuByRefIdRequest : BaseSkuRequest
+    public class GetSkuByAlternateIdRequest : BaseSkuRequest
     {
-        internal protected override string BaseUrl => "/api/catalog/pvt/stockkeepingunit";
+        internal protected override string BaseUrl => "api/catalog_system/pvt/sku/stockkeepingunitbyalternateId/{alternateId}";
         public override HttpMethod HttpMethod => HttpMethod.Get;
-        public int RefId { get; set; }
+
+        /// <summary>
+        /// Product EAN or RefId.
+        /// </summary>
+        public int AlternateId { get; set; }
+
         public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
             var parameters = base.GetQueryStringParameters();
-            parameters.Add("refId", this.RefId.ToString());
+            parameters.Add("alternateId", this.AlternateId.ToString());
             return parameters;
         }
     }
