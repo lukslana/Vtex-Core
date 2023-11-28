@@ -39,14 +39,11 @@ namespace Vtex.Component.Entities.Catalog.SKU.Request
         public object ModalType { get; set; }
         public bool KitItensSellApart { get; set; }
 
-        public override IList<KeyValuePair<string, string>> GetQueryStringWithoutParameters()
+        public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
-            var parameters = base.GetQueryStringWithoutParameters();
-
+            var parameters = base.GetQueryStringParameters();
             parameters.Add("Id", this.Id.ToString());
-
             return parameters;
         }
-
     }
 }

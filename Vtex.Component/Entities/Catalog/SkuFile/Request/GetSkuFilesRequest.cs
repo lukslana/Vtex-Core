@@ -1,30 +1,20 @@
 ﻿using Vtex.Component.Entities.Common.Extensions;
-using Vtex.Component.Entities.Interfaces;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Vtex.Component.Entities.Catalog.SkuFile.Request
 {
-    public class GetSkuFilesRequest : BaseSkuFileRequest, IRequestJson
+    public class GetSkuFilesRequest : BaseSkuFileRequest
     {
-        public override string BaseUrl => "api/catalog/pvt/stockkeepingunit/{skuId}/file";
+        internal protected override string BaseUrl => "api/catalog/pvt/stockkeepingunit/{skuId}/file";
+        public override HttpMethod HttpMethod => HttpMethod.Get;
 
-        [JsonIgnore]
         /// <summary>
         /// SKU's unique numerical identifier.
         /// </summary>
-        public int skuId { get; set; }
-
-        public override IList<KeyValuePair<string, string>> GetQueryStringWithoutParameters()
+        public int SkuId { get; set; }
+        public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
-            var parameters = base.GetQueryStringWithoutParameters();
-
-            parameters.Add("skuId", this.skuId.ToString());
-
+            var parameters = base.GetQueryStringParameters();
+            parameters.Add("skuId", this.SkuId.ToString());
             return parameters;
         }
     }

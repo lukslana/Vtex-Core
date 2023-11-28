@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace Vtex.Component.Entities.Catalog.SkuFile.Response
 {
-    public class GetSkuFilesResponse : BaseResponse
+    public class UpdateSkuFileResponse: BaseCatalogResponse
     {
         public int Id { get; set; }
         public int ArchiveId { get; set; }
         public int SkuId { get; set; }
-        public string Name { get; set; }
         public bool IsMain { get; set; }
-        public string Label { get; set; }
+        public object Label { get; set; }
     }
 }

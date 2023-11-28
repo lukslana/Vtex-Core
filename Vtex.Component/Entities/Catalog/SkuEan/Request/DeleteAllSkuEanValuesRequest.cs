@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Vtex.Component.Entities.Catalog.SkuEan.Request
 {
-    public class DeleteAllSkuEanValuesRequest : BaseSKUEanRequest, IRequestJsonDelete
+    public class DeleteAllSkuEanValuesRequest : BaseSKUEanRequest
     {
         public override string BaseUrl => "api/catalog/pvt/stockkeepingunit/{skuId}/ean";
 

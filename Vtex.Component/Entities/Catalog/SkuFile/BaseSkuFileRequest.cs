@@ -11,9 +11,7 @@ namespace Vtex.Component.Entities.Catalog.SkuFile
         public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
             var parameters = base.GetQueryStringParameters();
-
             return parameters;
         }
-
     }
 }
