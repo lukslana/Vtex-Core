@@ -12,6 +12,8 @@ using Vtex.Component.Entities.Catalog.ProductSpecification.Request;
 using Vtex.Component.Entities.Catalog.ProductSpecification.Response;
 using Vtex.Component.Entities.Catalog.SKU.Request;
 using Vtex.Component.Entities.Catalog.SKU.Response;
+using Vtex.Component.Entities.Catalog.SkuSpecification.Request;
+using Vtex.Component.Entities.Catalog.SkuSpecification.Response;
 using Vtex.Component.Entities.Catalog.Specification.Request;
 using Vtex.Component.Entities.Catalog.Specification.Response;
 using Vtex.Component.Entities.Catalog.SpecificationField.Request;
@@ -25,9 +27,11 @@ using Vtex.Component.Interfaces.Catalog.CategorySpecification;
 using Vtex.Component.Interfaces.Catalog.Product;
 using Vtex.Component.Interfaces.Catalog.ProductSpecification;
 using Vtex.Component.Interfaces.Catalog.Sku;
+using Vtex.Component.Interfaces.Catalog.SkuSpecification;
 using Vtex.Component.Interfaces.Catalog.Specification;
 using Vtex.Component.Interfaces.Catalog.SpecificationField;
 using Vtex.Component.Interfaces.Catalog.SpecificationGroup;
+using static Vtex.Component.VtexCatalog.SkuSpecification;
 
 
 namespace Vtex.Component
@@ -1238,6 +1242,124 @@ namespace Vtex.Component
                 }
             }
 
+        }
+
+        public static partial class SkuSpecification
+        {
+            public static AssociateSkuSpecificationApi AssociateSkuSpecification => new();
+            public static AssociateSkuSpecificationUsingSpecificationNameAndGroupNameApi AssociateSkuSpecificationUsingSpecificationNameAndGroupName => new();
+            public static DeleteAllSkuSpecificationsApi DeleteAllSkuSpecifications => new();
+            public static DeleteSkuSpecificationApi DeleteSkuSpecification => new();
+            public static GetSkuSpecificationsApi GetSkuSpecifications => new();
+            public static UpdateSkuSpecificationApi UpdateSkuSpecification => new();
+            public sealed class AssociateSkuSpecificationApi : HttpEngine<AssociateSkuSpecificationRequest, AssociateSkuSpecificationResponse>, IAssociateSkuSpecification
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public AssociateSkuSpecificationApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
+                public AssociateSkuSpecificationApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+            public sealed class AssociateSkuSpecificationUsingSpecificationNameAndGroupNameApi : HttpEngine<AssociateSkuSpecificationUsingSpecificationNameAndGroupNameRequest, AssociateSkuSpecificationUsingSpecificationNameAndGroupNameResponse>, IAssociateSkuSpecificationUsingSpecificationNameAndGroupName
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public AssociateSkuSpecificationUsingSpecificationNameAndGroupNameApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
+                public AssociateSkuSpecificationUsingSpecificationNameAndGroupNameApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+            public sealed class DeleteAllSkuSpecificationsApi : HttpEngine<DeleteAllSkuSpecificationsRequest, DeleteAllSkuSpecificationsResponse>, IDeleteAllSkuSpecifications
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public DeleteAllSkuSpecificationsApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
+                public DeleteAllSkuSpecificationsApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+            public sealed class DeleteSkuSpecificationApi : HttpEngine<DeleteSkuSpecificationRequest, DeleteSkuSpecificationResponse>, IDeleteSkuSpecification
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public DeleteSkuSpecificationApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
+                public DeleteSkuSpecificationApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+            public sealed class GetSkuSpecificationsApi : HttpEngine<GetSkuSpecificationsRequest, GetSkuSpecificationsResponse>, IGetSkuSpecifications
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public GetSkuSpecificationsApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
+                public GetSkuSpecificationsApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+            public sealed class UpdateSkuSpecificationApi : HttpEngine<UpdateSkuSpecificationRequest, UpdateSkuSpecificationResponse>, IUpdateSkuSpecification
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public UpdateSkuSpecificationApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
+                public UpdateSkuSpecificationApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
         }
     }
 }

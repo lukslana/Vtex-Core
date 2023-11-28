@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vtex.Component.Entities.Catalog.SkuSpecification.Response
 {
-    internal class UpdateSkuSpecificationResponse
+    public class UpdateSkuSpecificationResponse: BaseCatalogResponse
     {
     }
 }
