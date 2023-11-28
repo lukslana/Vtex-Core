@@ -1243,7 +1243,6 @@ namespace Vtex.Component
             }
 
         }
-
         public static partial class SkuSpecification
         {
             public static AssociateSkuSpecificationApi AssociateSkuSpecification => new();
