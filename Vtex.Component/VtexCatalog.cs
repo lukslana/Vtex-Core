@@ -1016,7 +1016,6 @@ namespace Vtex.Component
             }
 
         }
-
         /// <summary>
         /// A Stock Keeping Unit (SKU) corresponds to the actual item in the inventory that customers can purchase, which means it is equivalent to a product variation at VTEX, such as a long sleeve gray size S shirt. <br></br>
         ///Once you have created a product, it is time to submit its respective SKUs. <br></br>
