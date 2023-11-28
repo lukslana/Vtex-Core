@@ -1,5 +1,4 @@
-﻿using System.Runtime.InteropServices;
-using Vtex.Component.Entities.Catalog.Brand.Request;
+﻿using Vtex.Component.Entities.Catalog.Brand.Request;
 using Vtex.Component.Entities.Catalog.Brand.Response;
 using Vtex.Component.Entities.Catalog.BrandSubcollection.Request;
 using Vtex.Component.Entities.Catalog.BrandSubcollection.Response;
@@ -13,14 +12,12 @@ using Vtex.Component.Entities.Catalog.ProductSpecification.Request;
 using Vtex.Component.Entities.Catalog.ProductSpecification.Response;
 using Vtex.Component.Entities.Catalog.SKU.Request;
 using Vtex.Component.Entities.Catalog.SKU.Response;
-
 using Vtex.Component.Entities.Catalog.Specification.Request;
 using Vtex.Component.Entities.Catalog.Specification.Response;
 using Vtex.Component.Entities.Catalog.SpecificationField.Request;
 using Vtex.Component.Entities.Catalog.SpecificationField.Response;
 using Vtex.Component.Entities.Catalog.SpecificationGroup.Request;
 using Vtex.Component.Entities.Catalog.SpecificationGroup.Response;
-using Vtex.Component.Entities.Interfaces;
 using Vtex.Component.Interfaces.Catalog.Brand;
 using Vtex.Component.Interfaces.Catalog.BrandSubcollection;
 using Vtex.Component.Interfaces.Catalog.Category;
@@ -31,8 +28,6 @@ using Vtex.Component.Interfaces.Catalog.Sku;
 using Vtex.Component.Interfaces.Catalog.Specification;
 using Vtex.Component.Interfaces.Catalog.SpecificationField;
 using Vtex.Component.Interfaces.Catalog.SpecificationGroup;
-using static Vtex.Component.VtexCatalog.Sku;
-
 
 
 namespace Vtex.Component
