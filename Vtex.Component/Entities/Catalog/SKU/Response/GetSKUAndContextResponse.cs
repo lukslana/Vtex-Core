@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vtex.Component.Entities.Catalog.SKU.Response
 {
-    public class GetSKuAndContextResponse : BaseCatalogResponse
+    public class GetSkuAndContextResponse : BaseCatalogResponse
     {
         public int Id { get; set; }
         public int ProductId { get; set; }

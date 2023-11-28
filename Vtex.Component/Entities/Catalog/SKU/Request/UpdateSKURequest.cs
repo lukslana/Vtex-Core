@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Vtex.Component.Entities.Catalog.SKU.Request
 {
-    public class UpdateSKURequest : BaseSkuRequest
+    public class UpdateSkuRequest : BaseSkuRequest
     {
         internal protected override string BaseUrl => "api/catalog/pvt/stockkeepingunit/{Id}";
         public override HttpMethod HttpMethod => HttpMethod.Post;

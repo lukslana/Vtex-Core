@@ -11,25 +11,28 @@ using Vtex.Component.Entities.Catalog.Product.Request;
 using Vtex.Component.Entities.Catalog.Product.Response;
 using Vtex.Component.Entities.Catalog.ProductSpecification.Request;
 using Vtex.Component.Entities.Catalog.ProductSpecification.Response;
-using Vtex.Component.Entities.Catalog.SkuEan.Response;
+using Vtex.Component.Entities.Catalog.SKU.Request;
+using Vtex.Component.Entities.Catalog.SKU.Response;
+
 using Vtex.Component.Entities.Catalog.Specification.Request;
 using Vtex.Component.Entities.Catalog.Specification.Response;
 using Vtex.Component.Entities.Catalog.SpecificationField.Request;
 using Vtex.Component.Entities.Catalog.SpecificationField.Response;
 using Vtex.Component.Entities.Catalog.SpecificationGroup.Request;
 using Vtex.Component.Entities.Catalog.SpecificationGroup.Response;
+using Vtex.Component.Entities.Interfaces;
 using Vtex.Component.Interfaces.Catalog.Brand;
 using Vtex.Component.Interfaces.Catalog.BrandSubcollection;
 using Vtex.Component.Interfaces.Catalog.Category;
 using Vtex.Component.Interfaces.Catalog.CategorySpecification;
 using Vtex.Component.Interfaces.Catalog.Product;
 using Vtex.Component.Interfaces.Catalog.ProductSpecification;
+using Vtex.Component.Interfaces.Catalog.Sku;
 using Vtex.Component.Interfaces.Catalog.Specification;
 using Vtex.Component.Interfaces.Catalog.SpecificationField;
 using Vtex.Component.Interfaces.Catalog.SpecificationGroup;
-using static Vtex.Component.VtexCatalog.BrandSubCollection;
-using static Vtex.Component.VtexCatalog.Category;
-using static Vtex.Component.VtexCatalog.SpecificationField;
+using static Vtex.Component.VtexCatalog.Sku;
+
 
 
 namespace Vtex.Component
@@ -1012,6 +1015,230 @@ namespace Vtex.Component
                 /// </summary>
                 /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
                 public UpdateSpecificationGroupApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+
+        }
+
+        /// <summary>
+        /// A Stock Keeping Unit (SKU) corresponds to the actual item in the inventory that customers can purchase, which means it is equivalent to a product variation at VTEX, such as a long sleeve gray size S shirt. <br></br>
+        ///Once you have created a product, it is time to submit its respective SKUs. <br></br>
+        /// </summary>
+        public static partial class Sku
+        {
+            /// <summary>
+            /// Creates a new SKU.
+            ///If there is a need to create a new SKU with a specific custom ID, specify the Id(integer) in the request.Otherwise, VTEX will generate the ID automatically.
+            /// </summary>
+            public static CreateSkuApi CreateSku => new ();
+
+            /// <summary>
+            /// Retrieves context of an SKU.
+            /// </summary>
+            public static GetSkuAndContextApi GetSkuAndContext => new ();
+
+            /// <summary>
+            /// Retrieves an SKU by its Alternate ID.
+            /// </summary>
+            public static GetSkuByAlternateIdApi GetSkuByAlternateId => new ();
+
+            /// <summary>
+            /// Retrieves an SKU ID by the SKU's Reference ID.
+            /// </summary>
+            public static GetSkuByRefIdApi GetSkuByRefId => new ();
+            /// <summary>
+            /// Retrieves a list with the SKUs related to a product by the product's ID.
+            /// </summary>
+            public static GetSkuListByProductIdApi GetSkuListByProductId => new ();
+
+            /// <summary>
+            /// Retrieves a specific SKU by its ID.
+            /// </summary>
+            public static GetSkuApi GetSku => new ();
+
+            /// <summary>
+            /// Retrieves the IDs of all SKUs in your store. Presents the results with page size and pagination.
+            /// </summary>
+            public static ListAllSkuIdsApi ListAllSkuIds => new ();
+
+            /// <summary>
+            /// Receives a list of Reference IDs and returns a list with the corresponding SKU IDs.
+            /// </summary>
+            public static RetrieveSkuIdListByReferenceIdListApi RetrieveSkuIdListByReferenceIdList => new ();
+
+            /// <summary>
+            /// Updates an existing SKU.    
+            /// </summary>
+            public static UpdateSkuApi UpdateSku  => new ();
+
+            public sealed class CreateSkuApi : HttpEngine<CreateSkuRequest, CreateSkuResponse>, ICreateSku
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public CreateSkuApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
+                public CreateSkuApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+
+            public sealed class GetSkuAndContextApi : HttpEngine<GetSkuAndContextRequest, GetSkuAndContextResponse>, IGetSkuAndContext
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public GetSkuAndContextApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
+                public GetSkuAndContextApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+
+            public sealed class GetSkuByAlternateIdApi : HttpEngine<GetSkuByAlternateIdRequest, GetSkuByAlternateIdResponse>, IGetSkuByAlternateId
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public GetSkuByAlternateIdApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
+                public GetSkuByAlternateIdApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+
+            public sealed class GetSkuByRefIdApi : HttpEngine<GetSkuByRefIdRequest, GetSkuByRefIdResponse>, IGetSkuByRefId
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public GetSkuByRefIdApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
+                public GetSkuByRefIdApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+
+            public sealed class GetSkuListByProductIdApi : HttpEngine<GetSkuListByProductIdRequest, GetSkuListByProductIdResponse>, IGetSkuListByProductId
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public GetSkuListByProductIdApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
+                public GetSkuListByProductIdApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+
+            public sealed class GetSkuApi : HttpEngine<GetSkuRequest, GetSkuResponse>, IGetSku
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public GetSkuApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
+                public GetSkuApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+
+            public sealed class ListAllSkuIdsApi : HttpEngine<ListAllSkuIdsRequest, ListAllSkuIdsResponse>, IListAllSkuIds
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public ListAllSkuIdsApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
+                public ListAllSkuIdsApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+
+            public sealed class RetrieveSkuIdListByReferenceIdListApi : HttpEngine<RetrieveSkuIdListByReferenceIdListRequest, RetrieveSkuIdListByReferenceIdListResponse>, IRetrieveSkuIdListByReferenceIdList
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public RetrieveSkuIdListByReferenceIdListApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
+                public RetrieveSkuIdListByReferenceIdListApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+
+            public sealed class UpdateSkuApi : HttpEngine<UpdateSkuRequest, UpdateSkuResponse>, IUpdateSku
+            {
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                public UpdateSkuApi()
+                {
+                }
+
+                /// <summary>
+                /// Constructor.
+                /// </summary>
+                /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
+                public UpdateSkuApi(HttpClient httpClient)
                     : base(httpClient)
                 {
                 }
