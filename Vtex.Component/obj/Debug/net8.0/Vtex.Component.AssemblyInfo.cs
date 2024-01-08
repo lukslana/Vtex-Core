@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Vtex.Component")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e80a70244886b1ca8a5a81a0b6d52a3cd85dab22")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Vtex.Component")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Vtex.Component")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

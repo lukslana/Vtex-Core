@@ -8,7 +8,7 @@ namespace Vtex.Component.Entities.Search.Search.Response
 {
     public class SearchForProductsResponse: BaseResponse
     {
-        public Datum[] data { get; set; }
+        public Datum[] DataResponse { get; set; }
     }
 
     public class Datum
