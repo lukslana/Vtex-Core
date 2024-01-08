@@ -3,6 +3,7 @@ using Vtex.Component.Entities.Catalog.CategorySpecification.Request;
 using Vtex.Component.Interfaces;
 using Vtex.Component.Interfaces.Catalog.Brand;
 using Vtex.Component.Interfaces.Catalog.CategorySpecification;
+using Vtex.Component.Interfaces.Search.Search;
 
 namespace Vtex.Component.Api
 {
@@ -30,7 +31,9 @@ namespace Vtex.Component.Api
 				.AddApi<IGetBrandList, VtexCatalog.Brand.GetBrandListApi>(useHttpClientHandler);
 			services
 				.AddApi<IGetSpecificationsByCategoryId, VtexCatalog.CategorySpecification.GetSpecificationsByCategoryIdApi>(useHttpClientHandler);
-			
+
+			services.
+				AddApi<ISearchForProductsWithFilter, VtexSearch.SearchForProductsWithFilter>(useHttpClientHandler);
 
 
 			return services;

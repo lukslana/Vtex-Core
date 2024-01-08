@@ -17,9 +17,9 @@ namespace Vtex.Component.Entities.Order.Order.Request
     {
         public virtual string orderId { get; set; }
         protected internal override string BaseUrl => "api/oms/pvt/orders/{orderId}";
+		public override HttpMethod HttpMethod => HttpMethod.Get;
 
-
-        public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
+		public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
             var parameters = base.GetQueryStringParameters();
 
