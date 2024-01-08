@@ -13,6 +13,7 @@ namespace Vtex.Component.Entities.Catalog.Brand.Request
     public class GetBrandListRequest : BaseCatalogRequest
     {
         protected internal override string BaseUrl => "api/catalog/pvt/category";
+		public override HttpMethod HttpMethod => HttpMethod.Get;
 
-    }
+	}
 }

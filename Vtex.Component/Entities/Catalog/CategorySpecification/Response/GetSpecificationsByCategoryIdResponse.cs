@@ -8,7 +8,7 @@ namespace Vtex.Component.Entities.Catalog.CategorySpecification.Response
 {
     public class GetSpecificationsByCategoryIdResponse : BaseResponse
     {
-        public GetSpecificationsByCategoryIdResponses[] Data { get; set; }
+        public GetSpecificationsByCategoryIdResponses[] DataResponse { get; set; }
     }
     public class GetSpecificationsByCategoryIdResponses
     {

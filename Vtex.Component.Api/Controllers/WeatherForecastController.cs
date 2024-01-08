@@ -1,9 +1,14 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System.Linq.Expressions;
+using Vtex.Component.Entities.Catalog.Brand.Request;
+using Vtex.Component.Entities.Catalog.CategorySpecification.Request;
+using Vtex.Component.Entities.Catalog.CategorySpecification.Response;
 using Vtex.Component.Entities.Catalog.SKU.Request;
 using Vtex.Component.Entities.Catalog.SKU.Response;
 using Vtex.Component.Entities.Search.Search.Request;
+using Vtex.Component.Interfaces.Catalog.Brand;
+using Vtex.Component.Interfaces.Catalog.CategorySpecification;
 
 namespace Vtex.Component.Api.Controllers
 {
@@ -11,10 +16,10 @@ namespace Vtex.Component.Api.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-       
-        
- 
-        private static readonly string[] Summaries = new[]
+        private IGetBrandList _getBrandList;
+		private IGetSpecificationsByCategoryId _getSpecificationsByCategoryId;
+
+		private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
@@ -22,42 +27,39 @@ namespace Vtex.Component.Api.Controllers
         private readonly ILogger<WeatherForecastController> _logger;
         private readonly VtexApi _vtexApi;
 
-        public WeatherForecastController(IOptions<VtexApi> vtexApi, ILogger<WeatherForecastController> logger)
+
+        public WeatherForecastController(IOptions<VtexApi> vtexApi, ILogger<WeatherForecastController> logger, IGetBrandList getBrandList, IGetSpecificationsByCategoryId getSpecificationsByCategoryId)
         {
             _logger = logger;
             _vtexApi = vtexApi.Value;
-        }
+			_getBrandList = getBrandList;
+			_getSpecificationsByCategoryId = getSpecificationsByCategoryId;
+		}
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public async Task<IEnumerable<WeatherForecast>> GetAsync()
+        public async Task<GetSpecificationsByCategoryIdResponse> GetAsync(int CategoryId)
         {
-            int cod_skuId = 1001;
-            GetSKUResponse getSKUResponse = new GetSKUResponse();
-            try
+			IEnumerable<WeatherForecast> weatherForecasts = new List<WeatherForecast>();
+            GetSpecificationsByCategoryIdResponse getSpecificationsByCategoryIdResponse = new GetSpecificationsByCategoryIdResponse();
+
+			try
             {
-
-                var searchForProductsWithFilterRequest = new SearchForProductsWithFilterRequest
-                {
-                    appKey = _vtexApi.AppKey,
-                    appToken = _vtexApi.AppToken,
-                    accountName = _vtexApi.AppAccountName,
-                    ft = "aptamil 1",
-                    _from = 0,
-                    _to = 49
-                };
-                var searchForProductsWithFilterResponse = await VtexSearch.SearchForProductsWithFilter.QueryAsync(searchForProductsWithFilterRequest);
-
-
-            }
+				GetSpecificationsByCategoryIdRequest getSpecificationsByCategoryId = new GetSpecificationsByCategoryIdRequest
+				{
+                    AccountName = _vtexApi.AppAccountName,
+                    Environment = _vtexApi.AppEnvironment,
+                    AppKey = _vtexApi.AppKey,
+                    AppToken = _vtexApi.AppToken,
+                    CategoryId = CategoryId
+				};
+				getSpecificationsByCategoryIdResponse = await _getSpecificationsByCategoryId.QueryAsync(getSpecificationsByCategoryId);
+			}
             catch (Exception)
             {
+
+                throw;
             }
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            }).ToArray();
-        }
+            return getSpecificationsByCategoryIdResponse;
+		}
     }
 }

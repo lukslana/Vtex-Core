@@ -4,6 +4,7 @@ using Vtex.Component.Entities.Common.Extensions;
 using System.Data;
 using System.Security.Cryptography;
 using System.Text;
+using System.Reflection.Metadata;
 
 namespace Vtex.Component.Entities
 {
@@ -43,15 +44,19 @@ namespace Vtex.Component.Entities
                         : Uri.EscapeDataString(x.Key) + "=" + Uri.EscapeDataString(x.Value));
             var queryString = string.Join("&", queryStringParameters);
 
-            /// Replace {parametros} dentro da Url
-            /// 
+            var BaseUrlLocal = this.BaseUrl;
+			foreach (var parameter in this.GetQueryStringParameters())
+			{
+				// Replace placeholders in the URL with actual values
+				BaseUrlLocal = this.BaseUrl.ToLower().Replace("{" + parameter.Key.ToLower() + "}", parameter.Value);
+			}
 
-            if (!string.IsNullOrEmpty(queryString))
+			if (!string.IsNullOrEmpty(queryString))
             {
                 queryString = $"?{queryString}";
             }
 
-            var uri = new Uri($"{SCHEME}{this.BaseUrl}{queryString}");
+            var uri = new Uri($"{SCHEME}{this.Environment}.vtexcommercestable.com.br/{BaseUrlLocal}{queryString}");
 
             if (this.AppKey == null)
             {

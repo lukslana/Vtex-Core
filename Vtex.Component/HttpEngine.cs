@@ -159,8 +159,41 @@ namespace Vtex.Component
             httpRequestMessage.Headers
                 .Add(VtexHttpHeaders.API_AppToken, request.AppToken);
 
-            switch (request)
+
+			var serializeObject = System.Text.Json.JsonSerializer.Serialize(request, HttpEngine.jsonSerializerOptions);
+			switch (request.HttpMethod.Method)
             {
+				case "GET":
+					return await this.httpClient
+						   .SendAsync(httpRequestMessage, cancellationToken);
+				case "POST":
+					httpRequestMessage.Content = new StringContent(serializeObject, Encoding.UTF8);
+					return await this.httpClient
+						.SendAsync(httpRequestMessage, cancellationToken)
+						.ConfigureAwait(false);
+				case "PUT":
+					httpRequestMessage.Content = new StringContent(serializeObject, Encoding.UTF8);
+
+					return await this.httpClient
+						.SendAsync(httpRequestMessage, cancellationToken)
+						.ConfigureAwait(false);
+				case "DELETE":
+					httpRequestMessage.Content = new StringContent(serializeObject, Encoding.UTF8);
+
+					return await this.httpClient
+						.SendAsync(httpRequestMessage, cancellationToken)
+						.ConfigureAwait(false);
+				case "PATCH":
+					httpRequestMessage.Content = new StringContent(serializeObject, Encoding.UTF8);
+
+					return await this.httpClient
+						.SendAsync(httpRequestMessage, cancellationToken)
+						.ConfigureAwait(false);
+            }
+
+            /*switch (request)
+            {
+                
                 case IRequestQueryString:
                     {
                         return await this.httpClient
@@ -169,15 +202,13 @@ namespace Vtex.Component
 
                 case IRequestJson:
                     {
-                        var serializeObject = System.Text.Json.JsonSerializer.Serialize(request, HttpEngine.jsonSerializerOptions);
                         httpRequestMessage.Content = new StringContent(serializeObject, Encoding.UTF8);
 
                         return await this.httpClient
                             .SendAsync(httpRequestMessage, cancellationToken)
                             .ConfigureAwait(false);
                     }
-            }
-
+            }*/
             throw new NotSupportedException();
         }
         private async Task<TResponse> ProcessResponseAsync(HttpResponseMessage httpResponse)
@@ -218,9 +249,23 @@ namespace Vtex.Component
                             .ReadAsStringAsync()
                             .ConfigureAwait(false);
 
-                        response = System.Text.Json.JsonSerializer.Deserialize<TResponse>(rawJson, HttpEngine.jsonSerializerOptions) ?? new TResponse();
-                        response.RawJson = rawJson;
 
+						if (rawJson.StartsWith('['))
+						{
+							rawJson = @"{""DataResponse"":" + rawJson + "}";
+						}
+
+						if (rawJson == "")
+						{
+							rawJson = @"{""DataResponse"":" + "\"\"" + "}";
+						}
+						if (rawJson == "true")
+						{
+							rawJson = @"{""DataResponse"":" + "\"\"" + "}";
+						}
+						response = System.Text.Json.JsonSerializer.Deserialize<TResponse>(rawJson, HttpEngine.jsonSerializerOptions) ?? new TResponse();
+                        response.RawJson = rawJson;
+                        response.Status = Status.Ok;
                         break;
                     }
             }

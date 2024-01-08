@@ -5,7 +5,8 @@ namespace Vtex.Component.Entities.Catalog.CategorySpecification.Request
     public class GetSpecificationsByCategoryIdRequest : BaseCatalogRequest
     {
         protected internal override string BaseUrl => "api/catalog_system/pub/specification/field/listByCategoryId/{CategoryId}";
-        public virtual int CategoryId { get; set; }
+		public override HttpMethod HttpMethod => HttpMethod.Get;
+		public virtual int CategoryId { get; set; }
         public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
             var parameters = base.GetQueryStringParameters();

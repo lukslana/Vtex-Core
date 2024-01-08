@@ -35,13 +35,14 @@ namespace Vtex.Component.Entities.Interfaces
         string Message { get; set; }
 
 
+
         /// <summary>
         /// html_attributions contain a set of attributions which must be displayed to the user.
         /// </summary>
         IEnumerable<string> HtmlAttributions { get; set; }
 
-       int _from { get; set; }
-       int _to { get; set; }
-       int _itensFounds { get; set; }
+        int _from { get; set; }
+        int _to { get; set; }
+        int _itensFounds { get; set; }
     }
 }

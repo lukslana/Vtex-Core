@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Vtex.Component
 {
-    internal class HttpClientFactory
+	public class HttpClientFactory
     {
         /// <summary>
         /// Proxy property that will be used for all requests.
