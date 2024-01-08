@@ -15,6 +15,8 @@ using Vtex.Component.Entities.Catalog.SKU.Request;
 using Vtex.Component.Entities.Catalog.SKU.Response;
 using Vtex.Component.Entities.Catalog.SkuComplement.Request;
 using Vtex.Component.Entities.Catalog.SkuComplement.Response;
+using Vtex.Component.Entities.Catalog.SkuEan.Request;
+using Vtex.Component.Entities.Catalog.SkuEan.Response;
 using Vtex.Component.Entities.Catalog.SkuFile.Request;
 using Vtex.Component.Entities.Catalog.SkuFile.Response;
 using Vtex.Component.Entities.Catalog.SkuSpecification.Request;
@@ -33,6 +35,7 @@ using Vtex.Component.Interfaces.Catalog.Product;
 using Vtex.Component.Interfaces.Catalog.ProductSpecification;
 using Vtex.Component.Interfaces.Catalog.Sku;
 using Vtex.Component.Interfaces.Catalog.SkuComplement;
+using Vtex.Component.Interfaces.Catalog.SkuEan;
 using Vtex.Component.Interfaces.Catalog.SkuFile;
 using Vtex.Component.Interfaces.Catalog.SkuSpecification;
 using Vtex.Component.Interfaces.Catalog.Specification;
@@ -1529,5 +1532,58 @@ namespace Vtex.Component
                 }
             }
         }
-    }
+		public static partial class SkuEan
+        {
+			public static CreateSkuEanRequestApi CreateSkuEanRequest => new();
+            public static DeleteAllSkuEanValuesApi DeleteAllSkuEanValues => new();
+            public static GetEanBySkuIDApi GetEanBySkuID => new();
+            public static GetSkuByEANApi GetSkuByEAN => new();
+			public sealed class GetSkuByEANApi : HttpEngine<GetSkuByEANRequest, GetSkuByEANResponse>, IGetSkuByEAN
+			{
+				public GetSkuByEANApi()
+				{
+				}
+				public GetSkuByEANApi(HttpClient httpClient)
+				: base(httpClient)
+				{
+				}
+			}
+			public sealed class GetEanBySkuIDApi : HttpEngine<GetEanBySkuIDRequest, GetEanBySkuIDResponse>, IGetEanBySkuID
+			{
+				public GetEanBySkuIDApi()
+				{
+				}
+				public GetEanBySkuIDApi(HttpClient httpClient)
+				: base(httpClient)
+				{
+				}
+			}
+
+			public sealed class CreateSkuEanRequestApi : HttpEngine<CreateSkuEanRequest, CreateSkuEanResponse>, ICreateSkuEan
+			{
+				public CreateSkuEanRequestApi()
+				{
+				}
+				public CreateSkuEanRequestApi(HttpClient httpClient)
+				: base(httpClient)
+				{
+				}
+			}
+
+			public sealed class DeleteAllSkuEanValuesApi : HttpEngine<DeleteAllSkuEanValuesRequest, DeleteAllSkuEanValuesResponse>, IDeleteAllSkuEanValues
+			{
+				public DeleteAllSkuEanValuesApi()
+				{
+				}
+				public DeleteAllSkuEanValuesApi(HttpClient httpClient)
+					: base(httpClient)
+				{
+				}
+			}
+
+
+
+		}
+
+	}
 }
