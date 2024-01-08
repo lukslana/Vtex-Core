@@ -4,22 +4,21 @@ using Vtex.Component.Entities.Interfaces;
 namespace Vtex.Component.Entities.Catalog.SkuEan.Request
 {
 
-    public class GetSkuByEANRequest : BaseSKUEanRequest, IRequestQueryString
+    public class GetSkuByEANRequest : BaseSKUEanRequest
     {
-        public override string BaseUrl => "api/catalog_system/pvt/sku/stockkeepingunitbyean/{ean}";
+		protected internal override string BaseUrl => "api/catalog_system/pvt/sku/stockkeepingunitbyean/{ean}";
+		public override HttpMethod HttpMethod => HttpMethod.Get;
 
-        /// <summary>
-        /// EAN of the SKU which you need to retrieve details from.
-        /// </summary>
-        public string ean { get; set; }
+		/// <summary>
+		/// Ean
+		/// </summary>
+		public int Ean { get; set; }
 
-        public override IList<KeyValuePair<string, string>> GetQueryStringWithoutParameters()
-        {
-            var parameters = base.GetQueryStringWithoutParameters();
-
-            parameters.Add("ean", this.ean.ToString());
-
-            return parameters;
-        }
+		public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
+		{
+			var parameters = base.GetQueryStringParameters();
+			parameters.Add("ean", this.Ean.ToString());
+			return parameters;
+		}
     }
 }

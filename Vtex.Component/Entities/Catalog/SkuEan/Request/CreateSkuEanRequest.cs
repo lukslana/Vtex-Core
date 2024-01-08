@@ -8,28 +8,27 @@ using System.Threading.Tasks;
 
 namespace Vtex.Component.Entities.Catalog.SkuEan.Request
 {
-    public class CreateSkuEanRequest : BaseSKUEanRequest, IRequestJsonPost
+    public class CreateSkuEanRequest : BaseCatalogRequest
     {
-        public override string BaseUrl => "api/catalog/pvt/stockkeepingunit/{skuId}/ean/{ean}";
+		protected internal override string BaseUrl => "api/catalog/pvt/stockkeepingunit/{skuId}/ean/{ean}";
+		public override HttpMethod HttpMethod => HttpMethod.Post;
+
+		/// <summary>
+		/// SKU's unique numerical identifier.
+		/// </summary>
+		public int SkuId { get; set; }
 
         /// <summary>
-        /// SKU's unique numerical identifier.
+        /// Ean
         /// </summary>
-        public int skuId { get; set; }
+		public string Ean { get; set; }
 
-        /// <summary>
-        /// EAN
-        /// </summary>
-        public string ean { get; set; }
-
-        public override IList<KeyValuePair<string, string>> GetQueryStringWithoutParameters()
-        {
-            var parameters = base.GetQueryStringWithoutParameters();
-
-            parameters.Add("skuId", this.skuId.ToString());
-            parameters.Add("ean", this.ean.ToString());
-
-            return parameters;
-        }
-    }
+		public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
+		{
+			var parameters = base.GetQueryStringParameters();
+			parameters.Add("skuId", this.SkuId.ToString());
+			parameters.Add("Ean", this.Ean.ToString());
+			return parameters;
+		}
+	}
 }
