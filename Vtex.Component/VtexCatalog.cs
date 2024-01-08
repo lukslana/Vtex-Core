@@ -1,4 +1,5 @@
-﻿using Vtex.Component.Entities.Catalog.Brand.Request;
+﻿using System.Net.Http;
+using Vtex.Component.Entities.Catalog.Brand.Request;
 using Vtex.Component.Entities.Catalog.Brand.Response;
 using Vtex.Component.Entities.Catalog.BrandSubcollection.Request;
 using Vtex.Component.Entities.Catalog.BrandSubcollection.Response;
@@ -12,6 +13,10 @@ using Vtex.Component.Entities.Catalog.ProductSpecification.Request;
 using Vtex.Component.Entities.Catalog.ProductSpecification.Response;
 using Vtex.Component.Entities.Catalog.SKU.Request;
 using Vtex.Component.Entities.Catalog.SKU.Response;
+using Vtex.Component.Entities.Catalog.SkuComplement.Request;
+using Vtex.Component.Entities.Catalog.SkuComplement.Response;
+using Vtex.Component.Entities.Catalog.SkuFile.Request;
+using Vtex.Component.Entities.Catalog.SkuFile.Response;
 using Vtex.Component.Entities.Catalog.SkuSpecification.Request;
 using Vtex.Component.Entities.Catalog.SkuSpecification.Response;
 using Vtex.Component.Entities.Catalog.Specification.Request;
@@ -27,12 +32,12 @@ using Vtex.Component.Interfaces.Catalog.CategorySpecification;
 using Vtex.Component.Interfaces.Catalog.Product;
 using Vtex.Component.Interfaces.Catalog.ProductSpecification;
 using Vtex.Component.Interfaces.Catalog.Sku;
+using Vtex.Component.Interfaces.Catalog.SkuComplement;
+using Vtex.Component.Interfaces.Catalog.SkuFile;
 using Vtex.Component.Interfaces.Catalog.SkuSpecification;
 using Vtex.Component.Interfaces.Catalog.Specification;
 using Vtex.Component.Interfaces.Catalog.SpecificationField;
 using Vtex.Component.Interfaces.Catalog.SpecificationGroup;
-using static Vtex.Component.VtexCatalog.SkuSpecification;
-
 
 namespace Vtex.Component
 {
@@ -1355,6 +1360,170 @@ namespace Vtex.Component
                 /// </summary>
                 /// <param name=""httpClient"">The <see cref=""HttpClient""/>.</param>
                 public UpdateSkuSpecificationApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+        }
+        public static partial class SkuFile
+        {
+            public static CopyFilesFromAnSkuToAnotherSkuApi CopyFilesFromAnSkuToAnotherSku => new();
+            public static CreateSkuFileApi CreateSkuFile => new();
+            public static DeleteAllSkuFilesApi DeleteAllSkuFiles => new();
+            public static DeleteSkuImageFileApi DeleteSkuImageFile => new();
+            public static DisassociateSkuFileApi DisassociateSkuFile => new();
+            public static GetSkuFilesApi GetSkuFiles => new();
+            public static UpdateSkuFileApi UpdateSkuFile => new();
+
+            public sealed class CopyFilesFromAnSkuToAnotherSkuApi : HttpEngine<CopyFilesFromAnSkuToAnotherSkuRequest, CopyFilesFromAnSkuToAnotherSkuResponse>, ICopyFilesFromAnSkuToAnotherSku
+            {
+                public CopyFilesFromAnSkuToAnotherSkuApi()
+                {
+                }
+                public CopyFilesFromAnSkuToAnotherSkuApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+
+            public sealed class CreateSkuFileApi : HttpEngine<CreateSkuFileRequest, CreateSkuFileResponse>, ICreateSkuFile
+            {
+                public CreateSkuFileApi()
+                {
+                }
+
+
+                public CreateSkuFileApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+
+            }
+            public sealed class DeleteAllSkuFilesApi : HttpEngine<DeleteAllSkuFilesRequest, DeleteAllSkuFilesResponse>, IDeleteAllSkuFiles
+            {
+                public DeleteAllSkuFilesApi()
+                {
+                }
+
+
+                public DeleteAllSkuFilesApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+    
+            public sealed class DeleteSkuImageFileApi : HttpEngine<DeleteSkuImageFileRequest, DeleteSkuImageFileResponse>, IDeleteSkuImageFile
+            {
+                public DeleteSkuImageFileApi()
+                {
+                }
+
+
+                public DeleteSkuImageFileApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+
+            public sealed class DisassociateSkuFileApi : HttpEngine<DisassociateSkuFileRequest, DisassociateSkuFileResponse>, IDisassociateSkuFile
+            {
+                public DisassociateSkuFileApi()
+                {
+                }
+
+
+                public DisassociateSkuFileApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+
+            public sealed class GetSkuFilesApi : HttpEngine<GetSkuFilesRequest, GetSkuFilesResponse>, IGetSkuFiles
+            {
+                public GetSkuFilesApi()
+                {
+                }
+                public GetSkuFilesApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+
+            public sealed class UpdateSkuFileApi : HttpEngine<UpdateSkuFileRequest, UpdateSkuFileResponse>, IUpdateSkuFile
+            {
+                public UpdateSkuFileApi()
+                {
+                }
+                public UpdateSkuFileApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+        }
+        public static partial class SkuComplement
+        {
+            public static CreateSkuComplementApi CreateSkuComplement => new();
+            public static DeleteSkuComplementBySkuComplementIdApi DeleteSkuComplementBySkuComplementId => new();
+            public static GetSkuComplementBySkuComplementIdApi GetSkuComplementBySkuComplementId => new();
+            public static GetSkuComplementBySkuIdApi GetSkuComplementBySkuId => new();
+            public static GetSkuComplementsByComplementTypeIdApi GetSkuComplementsByComplementTypeId => new();
+            public static GetSkuComplementsByTypeApi GetSkuComplementsByType => new();
+            public sealed class CreateSkuComplementApi : HttpEngine<CreateSkuComplementRequest, CreateSkuComplementResponse>, ICreateSkuComplement
+            {
+                public CreateSkuComplementApi()
+                {
+                }
+                public CreateSkuComplementApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+            public sealed class DeleteSkuComplementBySkuComplementIdApi : HttpEngine<DeleteSkuComplementBySkuComplementIdRequest, DeleteSkuComplementBySkuComplementIdResponse>, IDeleteSkuComplementBySkuComplementId
+            {
+                public DeleteSkuComplementBySkuComplementIdApi()
+                {
+                }
+                public DeleteSkuComplementBySkuComplementIdApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+            public sealed class GetSkuComplementBySkuComplementIdApi : HttpEngine<GetSkuComplementBySkuComplementIdRequest, GetSkuComplementBySkuComplementIdResponse>, IGetSkuComplementBySkuComplementId
+            {
+                public GetSkuComplementBySkuComplementIdApi()
+                {
+                }
+                public GetSkuComplementBySkuComplementIdApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+            public sealed class GetSkuComplementBySkuIdApi : HttpEngine<GetSkuComplementBySkuIdRequest, GetSkuComplementBySkuIdResponse>, IGetSkuComplementBySkuId
+            {
+                public GetSkuComplementBySkuIdApi()
+                {
+                }
+                public GetSkuComplementBySkuIdApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+            public sealed class GetSkuComplementsByComplementTypeIdApi : HttpEngine<GetSkuComplementsByComplementTypeIdRequest, GetSkuComplementsByComplementTypeIdResponse>, IGetSkuComplementsByComplementTypeId
+            {
+                public GetSkuComplementsByComplementTypeIdApi()
+                {
+                }
+                public GetSkuComplementsByComplementTypeIdApi(HttpClient httpClient)
+                    : base(httpClient)
+                {
+                }
+            }
+            public sealed class GetSkuComplementsByTypeApi : HttpEngine<GetSkuComplementsByTypeRequest, GetSkuComplementsByTypeResponse>, IGetSkuComplementsByType
+            {
+                public GetSkuComplementsByTypeApi()
+                {
+                }
+                public GetSkuComplementsByTypeApi(HttpClient httpClient)
                     : base(httpClient)
                 {
                 }
