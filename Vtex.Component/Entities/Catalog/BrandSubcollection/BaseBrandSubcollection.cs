@@ -8,7 +8,7 @@ namespace Vtex.Component.Entities.Catalog.BrandSubcollection
 {
     public class BaseBrandSubcollection : BaseCatalogRequest
     {
-        public override string BaseUr => base.BaseUrl + "api/catalog/pvt/subcollection/";
+        public override string BaseUrl => base.BaseUrl + "api/catalog/pvt/subcollection/";
         public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
             var parameters = base.GetQueryStringParameters();

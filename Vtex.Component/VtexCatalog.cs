@@ -15,6 +15,8 @@ using Vtex.Component.Entities.Catalog.ProductSpecification.Request;
 using Vtex.Component.Entities.Catalog.ProductSpecification.Response;
 using Vtex.Component.Entities.Catalog.SKU.Request;
 using Vtex.Component.Entities.Catalog.SKU.Response;
+using Vtex.Component.Entities.Catalog.SkuAttachment.Request;
+using Vtex.Component.Entities.Catalog.SkuAttachment.Response;
 using Vtex.Component.Entities.Catalog.SkuComplement.Request;
 using Vtex.Component.Entities.Catalog.SkuComplement.Response;
 using Vtex.Component.Entities.Catalog.SkuEan.Request;
@@ -44,6 +46,8 @@ using Vtex.Component.Interfaces.Catalog.SkuSpecification;
 using Vtex.Component.Interfaces.Catalog.Specification;
 using Vtex.Component.Interfaces.Catalog.SpecificationField;
 using Vtex.Component.Interfaces.Catalog.SpecificationGroup;
+using Vtex.Component.Interfaces.Catalog.SkuAttachment;
+
 
 namespace Vtex.Component
 {
@@ -1561,7 +1565,6 @@ namespace Vtex.Component
 				{
 				}
 			}
-
 			public sealed class CreateSkuEanApi : HttpEngine<CreateSkuEanRequest, CreateSkuEanResponse>, ICreateSkuEan
 			{
 				public CreateSkuEanApi()
@@ -1584,7 +1587,6 @@ namespace Vtex.Component
 				}
 			}
 		}
-
         public static partial class Attachment
         {
 			public static CreateAttachmentApi CreateAttachment => new();
@@ -1631,6 +1633,66 @@ namespace Vtex.Component
 				{
 				}
 			}
+		}
+        public static partial class SkuAttachment
+        {
+
+			public static AssociateAttachmentsToAnSkuApi AssociateAttachmentsToAnSku => new();
+            public sealed class AssociateAttachmentsToAnSkuApi : HttpEngine<AssociateAttachmentsToAnSkuRequest, AssociateAttachmentsToAnSkuResponse>, IAssociateAttachmentsToAnSku
+			{
+				public AssociateAttachmentsToAnSkuApi()
+				{
+				}
+				public AssociateAttachmentsToAnSkuApi(HttpClient httpClient)
+				: base(httpClient)
+				{
+				}
+			}
+           
+            public static AssociateSkuAttachmentApi AssociateSkuAttachment => new();
+            public sealed class AssociateSkuAttachmentApi : HttpEngine<AssociateSkuAttachmentRequest, AssociateSkuAttachmentResponse>, IAssociateSkuAttachment
+            {
+	            public AssociateSkuAttachmentApi()
+	            {
+	            }
+	            public AssociateSkuAttachmentApi(HttpClient httpClient)
+	            : base(httpClient)
+	            {
+	            }
+            }
+            public static DeleteSkuAttachmentByAttachmentAssociationIDApi DeleteSkuAttachmentByAttachmentAssociationID => new();
+            public sealed class DeleteSkuAttachmentByAttachmentAssociationIDApi : HttpEngine<DeleteSkuAttachmentByAttachmentAssociationIDRequest, DeleteSkuAttachmentByAttachmentAssociationIDResponse>, IDeleteSkuAttachmentByAttachmentAssociationID
+            {
+	            public DeleteSkuAttachmentByAttachmentAssociationIDApi()
+	            {
+	            }
+	            public DeleteSkuAttachmentByAttachmentAssociationIDApi(HttpClient httpClient)
+	            : base(httpClient)
+	            {
+	            }
+            }
+            public static DissociateAttachmentsAndSkusApi DissociateAttachmentsAndSkus => new();
+            public sealed class DissociateAttachmentsAndSkusApi : HttpEngine<DissociateAttachmentsAndSkusRequest, DissociateAttachmentsAndSkusResponse>, IDissociateAttachmentsAndSkus
+            {
+	            public DissociateAttachmentsAndSkusApi()
+	            {
+	            }
+	            public DissociateAttachmentsAndSkusApi(HttpClient httpClient)
+	            : base(httpClient)
+	            {
+	            }
+            }
+            public static GetSkuAttachmentsBySkuIDApi GetSkuAttachmentsBySkuID => new();
+            public sealed class GetSkuAttachmentsBySkuIDApi : HttpEngine<GetSkuAttachmentsBySkuIDRequest, GetSkuAttachmentsBySkuIDResponse>, IGetSkuAttachmentsBySkuID
+            {
+	            public GetSkuAttachmentsBySkuIDApi()
+	            {
+	            }
+	            public GetSkuAttachmentsBySkuIDApi(HttpClient httpClient)
+	            : base(httpClient)
+	            {
+	            }
+            }
 		}
 	}
 }
