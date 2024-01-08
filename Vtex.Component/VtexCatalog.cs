@@ -1,4 +1,6 @@
 ﻿using System.Net.Http;
+using Vtex.Component.Entities.Catalog.Attachment.Request;
+using Vtex.Component.Entities.Catalog.Attachment.Response;
 using Vtex.Component.Entities.Catalog.Brand.Request;
 using Vtex.Component.Entities.Catalog.Brand.Response;
 using Vtex.Component.Entities.Catalog.BrandSubcollection.Request;
@@ -27,6 +29,7 @@ using Vtex.Component.Entities.Catalog.SpecificationField.Request;
 using Vtex.Component.Entities.Catalog.SpecificationField.Response;
 using Vtex.Component.Entities.Catalog.SpecificationGroup.Request;
 using Vtex.Component.Entities.Catalog.SpecificationGroup.Response;
+using Vtex.Component.Interfaces.Catalog.Attachment;
 using Vtex.Component.Interfaces.Catalog.Brand;
 using Vtex.Component.Interfaces.Catalog.BrandSubcollection;
 using Vtex.Component.Interfaces.Catalog.Category;
@@ -1534,7 +1537,7 @@ namespace Vtex.Component
         }
 		public static partial class SkuEan
         {
-			public static CreateSkuEanRequestApi CreateSkuEanRequest => new();
+			public static CreateSkuEanApi CreateSkuEan => new();
             public static DeleteAllSkuEanValuesApi DeleteAllSkuEanValues => new();
             public static GetEanBySkuIDApi GetEanBySkuID => new();
             public static GetSkuByEANApi GetSkuByEAN => new();
@@ -1559,12 +1562,12 @@ namespace Vtex.Component
 				}
 			}
 
-			public sealed class CreateSkuEanRequestApi : HttpEngine<CreateSkuEanRequest, CreateSkuEanResponse>, ICreateSkuEan
+			public sealed class CreateSkuEanApi : HttpEngine<CreateSkuEanRequest, CreateSkuEanResponse>, ICreateSkuEan
 			{
-				public CreateSkuEanRequestApi()
+				public CreateSkuEanApi()
 				{
 				}
-				public CreateSkuEanRequestApi(HttpClient httpClient)
+				public CreateSkuEanApi(HttpClient httpClient)
 				: base(httpClient)
 				{
 				}
@@ -1580,10 +1583,54 @@ namespace Vtex.Component
 				{
 				}
 			}
-
-
-
 		}
 
+        public static partial class Attachment
+        {
+			public static CreateAttachmentApi CreateAttachment => new();
+			public static DeleteAttachmentApi DeleteAttachment => new();
+			public static GetAttachmentByIDApi GetAttachmentByID => new();
+			public static UpdateAttachmentApi UpdateAttachment => new();
+			public sealed class CreateAttachmentApi : HttpEngine<CreateAttachmentRequest, CreateAttachmentResponse>, ICreateAttachment
+			{
+				public CreateAttachmentApi()
+				{
+				}
+				public CreateAttachmentApi(HttpClient httpClient)
+				: base(httpClient)
+				{
+				}
+			}
+			public sealed class DeleteAttachmentApi : HttpEngine<DeleteAttachmentRequest, DeleteAttachmentResponse>, IDeleteAttachment
+			{
+				public DeleteAttachmentApi()
+				{
+				}
+				public DeleteAttachmentApi(HttpClient httpClient)
+				: base(httpClient)
+				{
+				}
+			}
+			public sealed class GetAttachmentByIDApi : HttpEngine<GetAttachmentByIDRequest, GetAttachmentByIDResponse>, IGetAttachmentByID
+			{
+				public GetAttachmentByIDApi()
+				{
+				}
+				public GetAttachmentByIDApi(HttpClient httpClient)
+				: base(httpClient)
+				{
+				}
+			}
+			public sealed class UpdateAttachmentApi : HttpEngine<UpdateAttachmentRequest, UpdateAttachmentResponse>, IUpdateAttachment
+			{
+				public UpdateAttachmentApi()
+				{
+				}
+				public UpdateAttachmentApi(HttpClient httpClient)
+				: base(httpClient)
+				{
+				}
+			}
+		}
 	}
 }
