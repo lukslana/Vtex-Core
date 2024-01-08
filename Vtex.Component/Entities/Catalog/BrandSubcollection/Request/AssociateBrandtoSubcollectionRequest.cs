@@ -11,9 +11,9 @@ namespace Vtex.Component.Entities.Catalog.BrandSubcollection.Request
     /// <summary>
     /// Associates a single Brand to a Subcollection, which is a Group within a Collection.
     /// </summary>
-    public class AssociateBrandtoSubcollectionRequest : BaseBrandSubcollection, IRequestJsonPost
+    public class AssociateBrandtoSubcollectionRequest : BaseBrandSubcollection
     {
-        public override string BaseUrl => "api/catalog/pvt/subcollection/{subCollectionId}/brand";
+        protected internal override string BaseUrl => "api/catalog/pvt/subcollection/{subCollectionId}/brand";
 
         /// <summary>
         /// Subcollection’s unique numerical identifier, which can be obtained by placing a request to Get Subcollection by Collection ID.

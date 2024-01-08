@@ -14,9 +14,9 @@ namespace Vtex.Component.Entities.Pricing.PricesAndFixedPrices.Request
     /// The base price is the basic selling price of a product, it comprises the cost price and the markup wanted in the sale of the product.
     /// The fixed price is an optional price of the SKU for a specific trade policy with a specific minimum quantity to be activated.
     /// </summary>
-    public class CreateOrUpdateBasePriceOrFixedPricesRequest : BasePricesAndFixedPrices, IRequestJsonPut
+    public class CreateOrUpdateBasePriceOrFixedPricesRequest : BaseRequest
     {
-        public override string BaseUrl => "pricing/prices/{itemId}";
+        protected internal override string BaseUrl => "pricing/prices/{itemId}";
 
         [JsonIgnore]
         /// <summary>
@@ -93,7 +93,7 @@ namespace Vtex.Component.Entities.Pricing.PricesAndFixedPrices.Request
             public DateTime to { get; set; }
         }
         */
-        public override IList<KeyValuePair<string, string>> GetQueryStringWithoutParameters()
+        public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
             var parameters = base.GetQueryStringParameters();
             parameters.Add("itemId", this.itemId.ToString());

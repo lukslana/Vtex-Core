@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace Vtex.Component.Entities.Catalog.Category.Request
 {
-    public class GetCategoryByIdRequest : BaseCatalogRequest, IRequestQueryString
+    public class GetCategoryByIdRequest : BaseCatalogRequest
     {
-        public override string BaseUrl => "api/catalog/pvt/category/{categoryId}";
+		protected internal override string BaseUrl => "api/catalog/pvt/category/{categoryId}";
 
-        /// <summary>
-        /// Category’s unique numerical identifier.
-        /// </summary>
-        public int categoryId { get; set; }
+		/// <summary>
+		/// Category’s unique numerical identifier.
+		/// </summary>
+		public int categoryId { get; set; }
 
-        public override IList<KeyValuePair<string, string>> GetQueryStringWithoutParameters()
+        public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
             var parameters = base.GetQueryStringParameters();
             parameters.Add("categoryId", this.categoryId.ToString());

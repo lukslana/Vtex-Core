@@ -6,7 +6,7 @@ namespace Vtex.Component.Entities.Catalog.Product.Request
 {
     public class GetProductAndSkuIdsRequest: BaseProductRequest, IRequestQueryString
     {
-        public override string BaseUrl => "api/catalog_system/pvt/products/GetProductAndSkuIds";
+        protected internal override string BaseUrl => "api/catalog_system/pvt/products/GetProductAndSkuIds";
 
         /// <summary>
         /// ID of the category from which you need to retrieve Products and SKUs.

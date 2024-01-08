@@ -8,6 +8,7 @@ using Vtex.Component.Entities.Logistics.Inventory.Response;
 
 namespace Vtex.Component
 {
+    /*
     /// <summary>
     /// The Logistics API gives you access to your store's warehouses, docks, pick up points, carriers <br></br>
     /// and shipping rates and allows you to update the inventory of each SKU and manage fulfillment data.  <br></br>
@@ -30,4 +31,5 @@ namespace Vtex.Component
         /// </summary>
         public static HttpEngine<UpdateInventoryBySKUandWarehouseRequest, UpdateInventoryBySKUandWarehouseResponse> UpdateInventoryBySKUandWarehouse => HttpEngine<UpdateInventoryBySKUandWarehouseRequest, UpdateInventoryBySKUandWarehouseResponse>.instance;
     }
+    */
 }

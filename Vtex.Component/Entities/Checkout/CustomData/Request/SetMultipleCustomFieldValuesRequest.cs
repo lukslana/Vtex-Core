@@ -9,9 +9,9 @@ using Vtex.Component.Entities.Interfaces;
 
 namespace Vtex.Component.Entities.Checkout.CustomData.Request
 {
-    public class SetMultipleCustomFieldValuesRequest: BaseRequest, IRequestJsonPut
+    public class SetMultipleCustomFieldValuesRequest: BaseRequest
     {
-        public override string BaseUrl => "api/checkout/pub/orderForm/{orderFormId}/customData/{appId}";
+        protected internal override string BaseUrl => "api/checkout/pub/orderForm/{orderFormId}/customData/{appId}";
 
         /// <summary>
         /// ID of the orderForm that will receive the new custom field values.
@@ -25,9 +25,9 @@ namespace Vtex.Component.Entities.Checkout.CustomData.Request
 
         public List<Dictionary<string, string>> custom { get; set; }
 
-        public override IList<KeyValuePair<string, string>> GetQueryStringWithoutParameters()
+        public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
-            var parameters = base.GetQueryStringWithoutParameters();
+            var parameters = base.GetQueryStringParameters();
             if (!string.IsNullOrEmpty(this.orderFormId))
             {
                 parameters.Add("orderFormId", this.orderFormId);

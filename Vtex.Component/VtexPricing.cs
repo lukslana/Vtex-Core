@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Vtex.Component
 {
+    /*
     /// <summary>
     ///Pricing(v2) is the VTEX module responsible for the SKU's price list. 
     ///At this module we have the base price of each SKU, some optional fixed prices by trade policy, 
@@ -27,4 +28,5 @@ namespace Vtex.Component
         /// </summary>
         public static HttpEngine<CreateOrUpdateBasePriceOrFixedPricesRequest, CreateOrUpdateBasePriceOrFixedPricesResponse> CreateOrUpdateBasePriceOrFixedPrices => HttpEngine<CreateOrUpdateBasePriceOrFixedPricesRequest, CreateOrUpdateBasePriceOrFixedPricesResponse>.instance;
     }
+    */
 }

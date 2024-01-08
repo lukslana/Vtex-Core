@@ -9,7 +9,7 @@ namespace Vtex.Component.Entities.Catalog.Product.Request
 {
     public class CreateProductWithCategoryAndBrandRequest : BaseProductRequest
     {
-        public override string BaseUrl => "api/catalog/pvt/product";
+        protected internal override string BaseUrl => "api/catalog/pvt/product";
         public override HttpMethod HttpMethod => HttpMethod.Post;
 
         /// <summary>

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vtex.Component.Entities.Catalog.TradePolicy
 {
+    /*
     public class BaseTradePolicyRequest : BaseCatalogRequest
     {
         public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
@@ -15,5 +16,10 @@ namespace Vtex.Component.Entities.Catalog.TradePolicy
             return parameters;
         }
 
-    }
+		internal IList<KeyValuePair<string, string>> GetQueryStringParameters()
+		{
+			throw new NotImplementedException();
+		}
+	}
+    */
 }

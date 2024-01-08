@@ -13,14 +13,14 @@ namespace Vtex.Component.Entities.GiftCard.GiftCard.Request
     /// This is included in OMS - Full access and IntegrationProfile - Fulfillment Oms, 
     /// among other default roles available in the Admin. Learn more about the License manager roles and resources.
     /// </summary>
-    public class GetGiftCardbyIDRequest : BaseGiftCardRequest, IRequestQueryString
+    public class GetGiftCardbyIDRequest : BaseRequest
     {
-        public override string BaseUrl => base.BaseUrl + "api/giftcards/{giftCardID}";
+        protected internal override string BaseUrl => "api/giftcards/{giftCardID}";
         public virtual string giftCardID { get; set; }
         
-        public override IList<KeyValuePair<string, string>> GetQueryStringWithoutParameters()
+        public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
-            var parameters = base.GetQueryStringWithoutParameters();
+            var parameters = base.GetQueryStringParameters();
 
             if (!string.IsNullOrEmpty(this.giftCardID))
             {

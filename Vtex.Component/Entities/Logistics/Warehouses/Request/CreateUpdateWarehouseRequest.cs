@@ -9,12 +9,12 @@ namespace Vtex.Component.Entities.Logistics.Warehouses.Request
 {
     public class CreateUpdateWarehouseRequest : BaseLogisticsRequest
     {
-        public override string BaseUrl => "api/logistics/pvt/configuration/warehouses";
+        protected internal override string BaseUrl => "api/logistics/pvt/configuration/warehouses";
         public string skuId { get; set; }
 
-        public override IList<KeyValuePair<string, string>> GetQueryStringWithoutParameters()
+        public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
-            var parameters = base.GetQueryStringWithoutParameters();
+            var parameters = base.GetQueryStringParameters();
 
             if (!string.IsNullOrEmpty(this.skuId))
             {

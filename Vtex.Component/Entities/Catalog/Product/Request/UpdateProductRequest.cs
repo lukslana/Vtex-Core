@@ -8,9 +8,9 @@ using Vtex.Component.Entities.Interfaces;
 
 namespace Vtex.Component.Entities.Catalog.Product.Request
 {
-    public class UpdateProductRequest : BaseProductRequest, IRequestJsonPut
+    public class UpdateProductRequest : BaseProductRequest
     {
-        public override string BaseUrl => "api/catalog/pvt/product/{productId}";
+        protected internal override string BaseUrl => "api/catalog/pvt/product/{productId}";
 
         /// <summary>
         /// Product’s unique numerical identifier.
@@ -121,9 +121,8 @@ namespace Vtex.Component.Entities.Catalog.Product.Request
         public int? Score { get; set; }
 
 
-        public override IList<KeyValuePair<string, string>> GetQueryStringWithoutParameters()
+        public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
-            this.DataJsonPost = this;
             var parameters = base.GetQueryStringParameters();
             parameters.Add("productId", this.productId.ToString());
             return parameters;

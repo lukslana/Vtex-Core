@@ -7,9 +7,9 @@ using Vtex.Component.Entities.Order.Extensions;
 namespace Vtex.Component.Entities.Order.Invoice.Request
 {
 
-    public class OrderInvoiceNotificationRequest : BaseRequest, IRequestJsonPost
+    public class OrderInvoiceNotificationRequest : BaseRequest
     {
-        public override string BaseUrl => "api/oms/pvt/orders/{orderId}/invoice";
+        protected internal override string BaseUrl => "api/oms/pvt/orders/{orderId}/invoice";
 
         /// <summary>
         /// Order ID
@@ -82,7 +82,7 @@ namespace Vtex.Component.Entities.Order.Invoice.Request
             public int price { get; set; }
         }
 
-        public override IList<KeyValuePair<string, string>> GetQueryStringWithoutParameters()
+        public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
             var parameters = base.GetQueryStringParameters();
 

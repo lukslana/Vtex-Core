@@ -2,6 +2,7 @@
 
 namespace Vtex.Component.Entities.GiftCard
 {
+    /*
     /// <summary>
     /// The Gift Card is a payment method configured as a cash value associated to a client. It is used to grant a discount on the value of the order at the store.
     /// </summary>
@@ -14,4 +15,5 @@ namespace Vtex.Component.Entities.GiftCard
             return parameters;
         }
     }
+    */
 }

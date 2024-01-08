@@ -10,9 +10,9 @@ using Vtex.Component.Entities.Common.Extensions;
 
 namespace Vtex.Component.Entities.Order.Order.Request
 {
-    public class StartHandlingOrderRequest: BaseOrderRequest, IRequestJsonPost
+    public class StartHandlingOrderRequest: BaseRequest
     {
-        public override string BaseUrl => "api/oms/pvt/orders/{orderId}/{status}";
+        protected internal override string BaseUrl => "api/oms/pvt/orders/{orderId}/{status}";
 
         /// <summary>
         /// Order ID
@@ -20,7 +20,7 @@ namespace Vtex.Component.Entities.Order.Order.Request
         public string orderId { get; set; }
         public Status status { get; set; }
 
-        public override IList<KeyValuePair<string, string>> GetQueryStringWithoutParameters()
+        public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
             var parameters = base.GetQueryStringParameters();
 

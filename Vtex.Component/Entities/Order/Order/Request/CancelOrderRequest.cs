@@ -19,9 +19,9 @@ namespace Vtex.Component.Entities.Order.Order.Request
     ///<br></br>
     ///The Cancel order resource is needed to use this API request. This is included in OMS - Full access and IntegrationProfile - Fulfillment Oms, among other default roles available in the Admin. Learn more about the License manager roles and resources.
     /// </summary>
-    public class CancelOrderRequest : BaseOrderRequest, IRequestJsonPost
+    public class CancelOrderRequest : BaseRequest
     {
-        public override string BaseUrl => "api/oms/pvt/orders/{orderId}/cancel";
+        protected internal override string BaseUrl => "api/oms/pvt/orders/{orderId}/cancel";
 
         /// <summary>
         /// Order ID

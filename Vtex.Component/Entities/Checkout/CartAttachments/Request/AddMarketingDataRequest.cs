@@ -8,9 +8,9 @@ using Vtex.Component.Entities.Interfaces;
 
 namespace Vtex.Component.Entities.Checkout.CartAttachments.Request
 {
-    public class AddMarketingDataRequest : BaseRequest, IRequestJsonPost
+    public class AddMarketingDataRequest : BaseRequest
     {
-        public override string BaseUrl => "api/checkout/pub/orderForm/{orderFormId}/attachments/marketingData";
+        protected internal override string BaseUrl => "api/checkout/pub/orderForm/{orderFormId}/attachments/marketingData";
 
         /// <summary>
         /// ID of the orderForm that will receive the new custom field values.
@@ -19,9 +19,9 @@ namespace Vtex.Component.Entities.Checkout.CartAttachments.Request
 
         public string[] marketingTags { get; set; }
 
-        public override IList<KeyValuePair<string, string>> GetQueryStringWithoutParameters()
+        public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
-            var parameters = base.GetQueryStringWithoutParameters();
+            var parameters = base.GetQueryStringParameters();
             if (!string.IsNullOrEmpty(this.orderFormId))
             {
                 parameters.Add("orderFormId", this.orderFormId);

@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Vtex.Component.Entities.Search.Search.Request
 {
-    public class SearchForProductsWithFilterRequest : BaseSearchRequest, IRequestQueryString
+    public class SearchForProductsWithFilterRequest : BaseRequest
     {
-        public override string BaseUrl => "api/catalog_system/pub/products/search/";
+        protected internal override string BaseUrl => "api/catalog_system/pub/products/search/";
 
         /// <summary>
         /// Filter by full text - ft={searchWord} <br></br>

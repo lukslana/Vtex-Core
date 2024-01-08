@@ -6,12 +6,12 @@ namespace Vtex.Component.Entities.Catalog.Product.Request
 {
     public class GetProductbyIDRequest : BaseProductRequest, IRequestQueryString
     {
-        public override string BaseUrl => "api/catalog/pvt/product/{productId}";
+        protected internal override string BaseUrl => "api/catalog/pvt/product/{productId}";
         public virtual int productId { get; set; }
 
-        public override IList<KeyValuePair<string, string>> GetQueryStringWithoutParameters()
+        public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
-            var parameters = base.GetQueryStringWithoutParameters();
+            var parameters = base.GetQueryStringParameters();
 
             if (!string.IsNullOrEmpty(this.productId.ToString()))
             {

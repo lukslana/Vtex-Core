@@ -2,6 +2,7 @@
 
 namespace Vtex.Component.Entities.Order.Order
 {
+    /*
     /// <summary>
     /// Receive, process, and manage every order in your store through our Order Management API.
     /// </summary>
@@ -13,4 +14,5 @@ namespace Vtex.Component.Entities.Order.Order
             return parameters;
         }
     }
+    */
 }

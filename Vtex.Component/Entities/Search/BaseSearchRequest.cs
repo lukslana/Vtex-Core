@@ -1,5 +1,6 @@
 ﻿namespace Vtex.Component.Entities.Search
 {
+    /*
     public class BaseSearchRequest : BaseRequest
     {
         public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
@@ -8,4 +9,5 @@
             return parameters;
         }
     }
+    */
 }

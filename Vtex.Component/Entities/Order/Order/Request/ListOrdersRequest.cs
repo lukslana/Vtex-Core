@@ -8,9 +8,9 @@ using Vtex.Component.Entities.Order.Extensions;
 
 namespace Vtex.Component.Entities.Order.Order.Request
 {
-    public class ListOrdersRequest : BaseOrderRequest, IRequestQueryString
+    public class ListOrdersRequest : BaseRequest
     {
-        public override string BaseUrl => "api/oms/pvt/orders/";
+        protected internal override string BaseUrl => "api/oms/pvt/orders/";
 
         /// <summary>
         /// Order Field and Order Type concatenated orderBy={{OrderField}},{{OrderType}}

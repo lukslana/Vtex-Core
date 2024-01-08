@@ -5,13 +5,13 @@ namespace Vtex.Component.Entities.Logistics.Inventory.Request
 {
     public class ListInventoryPerWarehouseRequest: BaseLogisticsRequest
     {
-        public override string BaseUrl => "api/logistics/pvt/inventory/items/{skuId}/warehouses/{warehouseId}";
+        protected internal override string BaseUrl => "api/logistics/pvt/inventory/items/{skuId}/warehouses/{warehouseId}";
         public string skuId { get; set; }
         public string warehouseId { get; set; }
 
-        public override IList<KeyValuePair<string, string>> GetQueryStringWithoutParameters()
+        public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
-            var parameters = base.GetQueryStringWithoutParameters();
+            var parameters = base.GetQueryStringParameters();
 
             if (!string.IsNullOrEmpty(this.skuId))
             {

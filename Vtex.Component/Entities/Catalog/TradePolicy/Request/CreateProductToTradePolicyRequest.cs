@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Vtex.Component.Entities.Catalog.TradePolicy.Request
 {
-    public class CreateProductToTradePolicyRequest : BaseTradePolicyRequest, IRequestJsonPost
+    public class CreateProductToTradePolicyRequest : BaseRequest
     {
-        public override string BaseUrl => "api/catalog/pvt/product/{productId}/salespolicy/{tradepolicyId}";
+        protected internal override string BaseUrl => "api/catalog/pvt/product/{productId}/salespolicy/{tradepolicyId}";
 
         /// <summary>
         /// Product’s unique numerical identifier.
@@ -22,9 +22,9 @@ namespace Vtex.Component.Entities.Catalog.TradePolicy.Request
         /// </summary>
         public int tradepolicyId { get; set; }
 
-        public override IList<KeyValuePair<string, string>> GetQueryStringWithoutParameters()
+        public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
-            var parameters = base.GetQueryStringWithoutParameters();
+            var parameters = base.GetQueryStringParameters();
 
             parameters.Add("productId", this.productId.ToString());
             parameters.Add("tradepolicyId", this.tradepolicyId.ToString());

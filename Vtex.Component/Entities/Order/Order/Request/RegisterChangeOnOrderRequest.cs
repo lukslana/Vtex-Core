@@ -29,10 +29,10 @@ namespace Vtex.Component.Entities.Order.Order.Request
     ///<br></br>
     ///<br></br>The Change order resource is needed to use this API request. This is included in OMS - Full access and IntegrationProfile - Fulfillment Oms, among other default roles available in the Admin. Learn more about the License manager roles and resources.
     /// </summary>
-    public class RegisterChangeOnOrderRequest : BaseOrderRequest, IRequestJsonPost
+    public class RegisterChangeOnOrderRequest : BaseRequest
     {
 
-        public override string BaseUrl => "api/oms/pvt/orders/{orderId}/changes";
+        protected internal override string BaseUrl => "api/oms/pvt/orders/{orderId}/changes";
 
         [JsonIgnore]
         public string orderId { get; set; }

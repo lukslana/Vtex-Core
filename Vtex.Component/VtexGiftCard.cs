@@ -8,6 +8,7 @@ using Vtex.Component.Entities.GiftCard.GiftCard.Response;
 
 namespace Vtex.Component
 {
+    /*
     /// <summary>
     /// The Gift Card is a payment method configured as a cash value associated to a client. It is used to grant a discount on the value of the order at the store.
     /// </summary>
@@ -18,4 +19,5 @@ namespace Vtex.Component
         /// </summary>
         public static HttpEngine<GetGiftCardbyIDRequest, GetGiftCardbyIDResponse> GetGiftCardbyID => HttpEngine<GetGiftCardbyIDRequest, GetGiftCardbyIDResponse>.instance;
     }
+    */
 }

@@ -8,9 +8,9 @@ using Vtex.Component.Entities.Interfaces;
 
 namespace Vtex.Component.Entities.Checkout.ShoppingCart.Request
 {
-    public class UpdateCartItemsRequest: BaseRequest, IRequestJsonPatch
+    public class UpdateCartItemsRequest: BaseRequest
     {
-        public override string BaseUrl => "api/checkout/pub/orderForm/{orderFormId}/items";
+        protected internal override string BaseUrl => "api/checkout/pub/orderForm/{orderFormId}/items";
         /// <summary>
         /// ID of the orderForm corresponding to the cart whose items you want to update.
         /// </summary>
@@ -20,9 +20,9 @@ namespace Vtex.Component.Entities.Checkout.ShoppingCart.Request
         /// Array containing the cart items. Each object inside this array corresponds to a different item.
         /// </summary>
         public List<orderItems> orderItems { get; set; }   
-        public override IList<KeyValuePair<string, string>> GetQueryStringWithoutParameters()
+        public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
-            var parameters = base.GetQueryStringWithoutParameters();
+            var parameters = base.GetQueryStringParameters();
             if (!string.IsNullOrEmpty(this.orderFormId))
             {
                 parameters.Add("orderFormId", this.orderFormId);

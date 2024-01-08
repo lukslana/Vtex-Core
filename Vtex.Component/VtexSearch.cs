@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Vtex.Component
 {
+    /*
     ///<summary>
     ///Check the new Search onboarding guide.We created this guide to improve the onboarding experience for developers at VTEX.
     ///It assembles all documentation on our Developer Portal about Search and is organized by focusing on the developer's journey.
@@ -25,4 +26,5 @@ namespace Vtex.Component
         /// </summary>
         public static HttpEngine<SearchForProductsWithFilterRequest, SearchForProductsWithFilterResponse> SearchForProductsWithFilter => HttpEngine<SearchForProductsWithFilterRequest, SearchForProductsWithFilterResponse>.instance;
     }
+    */
 }

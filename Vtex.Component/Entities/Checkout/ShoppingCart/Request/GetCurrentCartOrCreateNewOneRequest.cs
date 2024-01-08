@@ -9,6 +9,6 @@ namespace Vtex.Component.Entities.Checkout.ShoppingCart.Request
 {
     public class GetCurrentCartOrCreateNewOneRequest: BaseRequest, IRequestQueryString
     {
-        public override string BaseUrl => "api/checkout/pub/orderForm";
+        protected internal override string BaseUrl => "api/checkout/pub/orderForm";
     }
 }

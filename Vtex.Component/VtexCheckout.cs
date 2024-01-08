@@ -10,6 +10,7 @@ using Vtex.Component.Entities.Checkout.ShoppingCart.Response;
 
 namespace Vtex.Component
 {
+    /*
     /// <summary>
     ///The orderForm is the main object processed by VTEX checkout, and one of the most important data structures in the architecture of every VTEX store.
     ///<br></br>It stores a lot of contextual information about the order which is important to the processing of the order: order items, client's personal data, delivery address, freight information, etc.
@@ -56,4 +57,5 @@ namespace Vtex.Component
         public static HttpEngine<GetCartInformationByIDRequest, GetCartInformationByIDResponse> GetCartInformationByID => HttpEngine<GetCartInformationByIDRequest, GetCartInformationByIDResponse>.instance;
         
     }
+    */
 }

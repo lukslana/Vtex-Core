@@ -4,13 +4,13 @@ using Vtex.Component.Entities.Interfaces;
 
 namespace Vtex.Component.Entities.Checkout.ShoppingCart.Request
 {
-    public class RemoveAllItemsRequest: BaseRequest, IRequestJsonPost
+    public class RemoveAllItemsRequest: BaseRequest
     {
-        public override string BaseUrl => "api/checkout/pub/orderForm/{orderFormId}/items/removeAll";
+        protected internal override string BaseUrl => "api/checkout/pub/orderForm/{orderFormId}/items/removeAll";
         public string orderFormId { get; set; }
-        public override IList<KeyValuePair<string, string>> GetQueryStringWithoutParameters()
+        public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
-            var parameters = base.GetQueryStringWithoutParameters();
+            var parameters = base.GetQueryStringParameters();
             if (!string.IsNullOrEmpty(this.orderFormId))
             {
                 parameters.Add("orderFormId", this.orderFormId);

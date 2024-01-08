@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Vtex.Component.Entities.Logistics.Inventory.Request
 {
-    public class UpdateInventoryBySKUandWarehouseRequest : BaseLogisticsRequest, IRequestJsonPut
+    public class UpdateInventoryBySKUandWarehouseRequest : BaseRequest
     {
-        public override string BaseUrl => "api/logistics/pvt/inventory/skus/{skuId}/warehouses/{warehouseId}";
+        protected internal override string BaseUrl => "api/logistics/pvt/inventory/skus/{skuId}/warehouses/{warehouseId}";
 
         [JsonIgnore]
         public int skuId { get; set; }
@@ -31,9 +31,9 @@ namespace Vtex.Component.Entities.Logistics.Inventory.Request
 
         public int quantity { get; set; }
 
-        public override IList<KeyValuePair<string, string>> GetQueryStringWithoutParameters()
+        public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
-            var parameters = base.GetQueryStringWithoutParameters();
+            var parameters = base.GetQueryStringParameters();
 
             if (!string.IsNullOrEmpty(this.skuId.ToString()))
             {

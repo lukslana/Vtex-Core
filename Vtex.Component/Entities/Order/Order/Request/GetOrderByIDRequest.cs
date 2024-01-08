@@ -13,15 +13,15 @@ namespace Vtex.Component.Entities.Order.Order.Request
     /// This is included in OMS - Full access and IntegrationProfile - Fulfillment Oms, 
     /// among other default roles available in the Admin. Learn more about the License manager roles and resources.
     /// </summary>
-    public class GetOrderByIDRequest: BaseOrderRequest, IRequestQueryString
+    public class GetOrderByIDRequest: BaseRequest
     {
         public virtual string orderId { get; set; }
-        public override string BaseUrl => "api/oms/pvt/orders/{orderId}";
+        protected internal override string BaseUrl => "api/oms/pvt/orders/{orderId}";
 
 
-        public override IList<KeyValuePair<string, string>> GetQueryStringWithoutParameters()
+        public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
-            var parameters = base.GetQueryStringWithoutParameters();
+            var parameters = base.GetQueryStringParameters();
 
             if (!string.IsNullOrEmpty(this.orderId))
             {

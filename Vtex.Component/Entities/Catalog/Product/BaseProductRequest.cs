@@ -9,7 +9,8 @@ namespace Vtex.Component.Entities.Catalog.Product
 {
     public class BaseProductRequest : BaseCatalogRequest
     {
-        public override string BaseUrl => base.BaseUrl + "api/catalog_system/pvt/products/";
+        protected internal override string BaseUrl => "api/catalog_system/pvt/products/";
+
         public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
             var parameters = base.GetQueryStringParameters();

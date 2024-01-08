@@ -14,9 +14,9 @@ namespace Vtex.Component.Entities.Catalog.Category.Request
     /// <summary>
     /// Updates a previously existing Category.
     /// </summary>
-    public class UpdateCategoryRequest : BaseCatalogRequest, IRequestJsonPut
+    public class UpdateCategoryRequest : BaseCatalogRequest
     {
-        public override string BaseUrl => "api/catalog/pvt/category/{Id}";
+		protected internal override string BaseUrl => "api/catalog/pvt/category/{Id}";
 
         [JsonIgnore]
         public int Id { get; set; }
@@ -105,7 +105,7 @@ namespace Vtex.Component.Entities.Catalog.Category.Request
         /// </summary>
         public string? StockKeepingUnitSelectionMode { get; set; } = null;
 
-        public override IList<KeyValuePair<string, string>> GetQueryStringWithoutParameters()
+        public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
             var parameters = base.GetQueryStringParameters();
             parameters.Add("Id", this.Id.ToString());

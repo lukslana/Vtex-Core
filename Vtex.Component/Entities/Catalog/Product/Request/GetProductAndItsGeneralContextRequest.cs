@@ -12,9 +12,9 @@ namespace Vtex.Component.Entities.Catalog.Product.Request
     /// </summary>
     public class GetProductAndItsGeneralContextRequest: BaseProductRequest
     {
-        public override string BaseUrl => "api/catalog_system/pvt/products/productget/{productId}";
+        protected internal override string BaseUrl => "api/catalog_system/pvt/products/productget/{productId}";
         public string productId { get; set; }
-        public override IList<KeyValuePair<string, string>> GetQueryStringWithoutParameters()
+        public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
             var parameters = base.GetQueryStringParameters();
             parameters.Add("productId", this.productId.ToString());

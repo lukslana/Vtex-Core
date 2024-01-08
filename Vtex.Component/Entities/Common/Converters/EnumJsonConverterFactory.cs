@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Vtex.Component.Entities.Common.Converters.Enums;
+using Vtex.Component.Entities.Common.Converters.Enums.Converters;
 
 namespace Vtex.Component.Entities.Common.Converters;
 
