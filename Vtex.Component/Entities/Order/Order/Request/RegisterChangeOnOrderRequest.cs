@@ -34,6 +34,8 @@ namespace Vtex.Component.Entities.Order.Order.Request
 
         protected internal override string BaseUrl => "api/oms/pvt/orders/{orderId}/changes";
 
+        public override HttpMethod HttpMethod => HttpMethod.Post;
+
         [JsonIgnore]
         public string orderId { get; set; }
 

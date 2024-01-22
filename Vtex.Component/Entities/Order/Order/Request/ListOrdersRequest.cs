@@ -11,6 +11,7 @@ namespace Vtex.Component.Entities.Order.Order.Request
     public class ListOrdersRequest : BaseRequest
     {
         protected internal override string BaseUrl => "api/oms/pvt/orders/";
+        public override HttpMethod HttpMethod => HttpMethod.Get;
 
         /// <summary>
         /// Order Field and Order Type concatenated orderBy={{OrderField}},{{OrderType}}

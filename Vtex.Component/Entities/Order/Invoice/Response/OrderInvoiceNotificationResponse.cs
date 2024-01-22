@@ -8,7 +8,8 @@ namespace Vtex.Component.Entities.Order.Invoice.Response
 {
     public class OrderInvoiceNotificationResponse : BaseResponse
     {
-        public string invoiceValue { get; set; }
-        public DateTime dispatchedDate { get; set; }
+        public DateTime date { get; set; }
+        public string orderId { get; set; }
+        public string receipt { get; set; }
     }
 }

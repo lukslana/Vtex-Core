@@ -23,10 +23,17 @@ namespace Vtex.Component.Entities.Order.Order.Request
     {
         protected internal override string BaseUrl => "api/oms/pvt/orders/{orderId}/cancel";
 
+        public override HttpMethod HttpMethod => HttpMethod.Post;
+
         /// <summary>
         /// Order ID
         /// </summary>
         public int orderId { get; set; }
+
+        /// <summary>
+        /// Reason for cancelling the order. Default: Unexpected stock shortage
+        /// </summary>
+        public string reason { get; set; }
 
         public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {

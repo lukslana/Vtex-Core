@@ -11,6 +11,8 @@ namespace Vtex.Component.Entities.Order.Invoice.Request
     {
         protected internal override string BaseUrl => "api/oms/pvt/orders/{orderId}/invoice";
 
+        public override HttpMethod HttpMethod => HttpMethod.Get;
+
         /// <summary>
         /// Order ID
         /// </summary>
@@ -85,10 +87,7 @@ namespace Vtex.Component.Entities.Order.Invoice.Request
         public override IList<KeyValuePair<string, string>> GetQueryStringParameters()
         {
             var parameters = base.GetQueryStringParameters();
-
             parameters.Add("orderId", orderId.ToString());
-            parameters.Add("status", StatusExtensions.StatusToString(Status.start_handling));
-
             return parameters;
 
         }
