@@ -47,7 +47,12 @@ using Vtex.Component.Interfaces.Catalog.Specification;
 using Vtex.Component.Interfaces.Catalog.SpecificationField;
 using Vtex.Component.Interfaces.Catalog.SpecificationGroup;
 using Vtex.Component.Interfaces.Catalog.SkuAttachment;
-
+using Vtex.Component.Entities.Catalog.SkuService.Request;
+using Vtex.Component.Entities.Catalog.SkuService.Response;
+using Vtex.Component.Interfaces.Catalog.SkuService;
+using Vtex.Component.Entities.Catalog.SkuKit.Request;
+using Vtex.Component.Entities.Catalog.SkuKit.Response;
+using Vtex.Component.Interfaces.Catalog.SkuKit;
 
 namespace Vtex.Component
 {
@@ -1694,5 +1699,124 @@ namespace Vtex.Component
 	            }
             }
 		}
-	}
+        public static partial class SkuService
+        {
+
+            public static GetSkuServiceApi GetSkuService => new();
+            public sealed class GetSkuServiceApi : HttpEngine<GetSkuServiceRequest, GetSkuServiceResponse>, IGetSkuService
+            {
+                public GetSkuServiceApi()
+                {
+                }
+                public GetSkuServiceApi(HttpClient httpClient)
+                : base(httpClient)
+                {
+                }
+            }
+
+            public static AssociateSkuServiceApi AssociateSkuService => new();
+            public sealed class AssociateSkuServiceApi : HttpEngine<AssociateSkuServiceRequest, AssociateSkuServiceResponse>, IAssociateSkuService
+            {
+                public AssociateSkuServiceApi()
+                {
+                }
+                public AssociateSkuServiceApi(HttpClient httpClient)
+                : base(httpClient)
+                {
+                }
+            }
+
+            public static DissociateSkuServiceApi DissociateSkuService => new();
+            public sealed class DissociateSkuServiceApi : HttpEngine<DissociateSkuServiceRequest, DissociateSkuServiceResponse>, IDissociateSkuService
+            {
+                public DissociateSkuServiceApi()
+                {
+                }
+                public DissociateSkuServiceApi(HttpClient httpClient)
+                : base(httpClient)
+                {
+                }
+            }
+
+
+            public static UpdateSkuServiceApi UpdateSkuService => new();
+            public sealed class UpdateSkuServiceApi : HttpEngine<UpdateSkuServiceRequest, UpdateSkuServiceResponse>, IUpdateSkuService
+            {
+                public UpdateSkuServiceApi()
+                {
+                }
+                public UpdateSkuServiceApi(HttpClient httpClient)
+                : base(httpClient)
+                {
+                }
+            }
+
+
+        }
+        public static partial class SkuKit
+        {
+            public static GetSkuKitApi GetSkuKit => new();
+            public sealed class GetSkuKitApi : HttpEngine<GetSkuKitRequest, GetSkuKitResponse>, IGetSkuKit
+            {
+                public GetSkuKitApi()
+                {
+                }
+                public GetSkuKitApi(HttpClient httpClient)
+                : base(httpClient)
+                {
+                }
+            }
+
+
+            public static GetSkuKitBySkuIdOrParentSkuIdApi GetSkuKitBySkuIdOrParentSkuId => new();
+            public sealed class GetSkuKitBySkuIdOrParentSkuIdApi : HttpEngine<GetSkuKitBySkuIdOrParentSkuIdRequest, GetSkuKitBySkuIdOrParentSkuIdResponse>, IGetSkuKitBySkuIdOrParentSkuId
+            {
+                public GetSkuKitBySkuIdOrParentSkuIdApi()
+                {
+                }
+                public GetSkuKitBySkuIdOrParentSkuIdApi(HttpClient httpClient)
+                : base(httpClient)
+                {
+                }
+            }
+
+
+            public static DeleteSkuKitBySkuIdOrParentSkuIdApi DeleteSkuKitBySkuIdOrParentSkuId => new();
+            public sealed class DeleteSkuKitBySkuIdOrParentSkuIdApi : HttpEngine<DeleteSkuKitBySkuIdOrParentSkuIdRequest, DeleteSkuKitBySkuIdOrParentSkuIdResponse>, IDeleteSkuKitBySkuIdOrParentSkuId
+            {
+                public DeleteSkuKitBySkuIdOrParentSkuIdApi()
+                {
+                }
+                public DeleteSkuKitBySkuIdOrParentSkuIdApi(HttpClient httpClient)
+                : base(httpClient)
+                {
+                }
+            }
+
+            public static DeleteSkuKitByKitIdApi DeleteSkuKitByKitId => new();
+            public sealed class DeleteSkuKitByKitIdApi : HttpEngine<DeleteSkuKitByKitIdRequest, DeleteSkuKitByKitIdResponse>, IDeleteSkuKitByKitId
+            {
+                public DeleteSkuKitByKitIdApi()
+                {
+                }
+                public DeleteSkuKitByKitIdApi(HttpClient httpClient)
+                : base(httpClient)
+                {
+                }
+            }
+
+
+            public static CreateSkuKitApi CreateSkuKit => new();
+            public sealed class CreateSkuKitApi : HttpEngine<CreateSkuKitRequest, CreateSkuKitResponse>, ICreateSkuKit
+            {
+                public CreateSkuKitApi()
+                {
+                }
+                public CreateSkuKitApi(HttpClient httpClient)
+                : base(httpClient)
+                {
+                }
+            }
+        }
+    }
 }

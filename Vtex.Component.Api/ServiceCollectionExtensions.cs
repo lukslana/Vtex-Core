@@ -32,9 +32,6 @@ namespace Vtex.Component.Api
 			services
 				.AddApi<IGetSpecificationsByCategoryId, VtexCatalog.CategorySpecification.GetSpecificationsByCategoryIdApi>(useHttpClientHandler);
 
-			services.
-				AddApi<ISearchForProductsWithFilter, VtexSearch.SearchForProductsWithFilter>(useHttpClientHandler);
-
 
 			return services;
 		}

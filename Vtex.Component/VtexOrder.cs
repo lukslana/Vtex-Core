@@ -11,6 +11,7 @@ namespace Vtex.Component
     /// </summary>
     public class VtexOrder
     {
+        /*
         #region Order
         /// <summary>
         /// Retrieve order details by searching a specific order ID or sequence number.
@@ -80,7 +81,7 @@ namespace Vtex.Component
         /// </summary>
         public static HttpEngine<OrderInvoiceNotificationRequest, OrderInvoiceNotificationResponse> OrderInvoiceNotification => HttpEngine<OrderInvoiceNotificationRequest, OrderInvoiceNotificationResponse>.instance;
         #endregion
-
+        */
 
     }
     
